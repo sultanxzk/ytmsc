@@ -48,7 +48,8 @@ function apiDevServer() {
 }
 
 export default defineConfig({
-  base: '/ytmsc/',
+  // Vercel (produção) serve na raiz '/'. GitHub Pages serve em '/ytmsc/'.
+  base: process.env.GITHUB_ACTIONS ? '/ytmsc/' : '/',
   plugins: [react(), tailwindcss(), apiDevServer()],
   server: { port: 5173, host: true },
   preview: { port: 4173, host: true },
