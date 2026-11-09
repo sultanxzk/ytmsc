@@ -1,0 +1,1001 @@
+- document:
+  - navigation:
+    - button "Guide" [pressed]
+    - link "Início":
+      - /url: /
+    - search:
+      - button "Iniciar pesquisa"
+      - combobox "Pesquise músicas, álbuns, artistas e podcasts"
+    - button "Conectar a um dispositivo"
+    - button
+    - link "Fazer login":
+      - /url: https://accounts.google.com/ServiceLogin?ltmpl=music&service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dpt%26next%3Dhttps%253A%252F%252Fmusic.youtube.com%252Fexplore%26feature%3D__FEATURE__&hl=pt-BR
+  - navigation:
+    - link "Início"
+    - link "Explorar"
+    - link "Biblioteca"
+    - button "Fazer login"
+    - text: Sign in to create & share playlists, get personalized recommendations, and more.
+  - main:
+    - tab "Lançamentos":
+      - button "Lançamentos"
+    - tab "Paradas":
+      - button "Paradas"
+    - tab "Momentos e gêneros":
+      - button "Momentos e gêneros"
+    - tab "Podcasts":
+      - button "Podcasts"
+    - heading "Novos álbuns e singles" [level=2]:
+      - link "Novos álbuns e singles":
+        - /url: new_releases/albums
+    - button "Mais"
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Reproduzir Bondade de Deus - Com Coral Menu de ações":
+          - /url: browse/MPREb_TaPAVCysv6D
+          - button "Reproduzir Bondade de Deus - Com Coral"
+          - button "Menu de ações"
+        - link "Bondade de Deus - Com Coral":
+          - /url: browse/MPREb_TaPAVCysv6D
+        - text: Single •
+        - link "Isaias Saad":
+          - /url: channel/UCTfwO4EKaOtcgGi55oUZZVg
+      - listitem:
+        - link "Reproduzir Tum Tum Tum Menu de ações":
+          - /url: browse/MPREb_XM0QYBaSIKN
+          - button "Reproduzir Tum Tum Tum"
+          - button "Menu de ações"
+        - link "Tum Tum Tum":
+          - /url: browse/MPREb_XM0QYBaSIKN
+        - text: Single •
+        - link "Thiago Jhonathan (TJ)":
+          - /url: channel/UCHwIhcXtWUYKN2aFkLEP4NA
+      - listitem:
+        - link "Reproduzir Taça De Pranto (Ao Vivo) Menu de ações":
+          - /url: browse/MPREb_ZaEg9loYgh0
+          - button "Reproduzir Taça De Pranto (Ao Vivo)"
+          - button "Menu de ações"
+        - link "Taça De Pranto (Ao Vivo)":
+          - /url: browse/MPREb_ZaEg9loYgh0
+        - text: Single •
+        - link "Gian & Giovani":
+          - /url: channel/UCYLMF2me7OpLdCgbd5J2zYQ
+        - text: e
+        - link "Murilo Huff":
+          - /url: channel/UC-g0dJZGCPLIb7yoFndqmRA
+      - listitem:
+        - link "Reproduzir No Sentimento em Brasília Vol. 1 (Ao Vivo) Menu de ações":
+          - /url: browse/MPREb_SqPr5NKPV9f
+          - button "Reproduzir No Sentimento em Brasília Vol. 1 (Ao Vivo)"
+          - button "Menu de ações"
+        - link "No Sentimento em Brasília Vol. 1 (Ao Vivo)":
+          - /url: browse/MPREb_SqPr5NKPV9f
+        - text: Álbum •
+        - link "Felipe e Rodrigo":
+          - /url: channel/UCMoYu0mVhcdW5IyZoWoYNBQ
+      - listitem:
+        - link "Reproduzir Ela Quer Bagunçar Minha Mente Menu de ações":
+          - /url: browse/MPREb_VyD4ikImNKz
+          - button "Reproduzir Ela Quer Bagunçar Minha Mente"
+          - button "Menu de ações"
+        - link "Ela Quer Bagunçar Minha Mente":
+          - /url: browse/MPREb_VyD4ikImNKz
+        - text: Single •
+        - link "Som de Faculdade":
+          - /url: channel/UCNm8HupzKY6i73WlpQc65sg
+        - text: ","
+        - link "fernando junior":
+          - /url: channel/UCSJXpBRDdIaUK18SzOUlhVQ
+        - text: e
+        - link "Pagode Viral":
+          - /url: channel/UCqahOEJlDURgu4rQb7HGhaQ
+      - listitem:
+        - link "Reproduzir Brincadeira do Morto Vivo Menu de ações":
+          - /url: browse/MPREb_MQWCvCNTP3F
+          - button "Reproduzir Brincadeira do Morto Vivo"
+          - button "Menu de ações"
+        - link "Brincadeira do Morto Vivo":
+          - /url: browse/MPREb_MQWCvCNTP3F
+        - text: Single •
+        - link "Mc Fantaxma":
+          - /url: channel/UCFVZZr5CULHkc9e90qjTIig
+        - text: ","
+        - link "MC WL da ZN":
+          - /url: channel/UC2a1wR6Mx4yxCVmOceaQY6A
+        - text: e
+        - link "Dj Chavoso":
+          - /url: channel/UCMItuwm76rsBDOGUctuMmEA
+      - listitem:
+        - link "Xonado Sem Quantia":
+          - /url: browse/MPREb_Dk8ovEby17o
+        - link "Xonado Sem Quantia":
+          - /url: browse/MPREb_Dk8ovEby17o
+        - text: Single •
+        - link "Guilherme Silva":
+          - /url: channel/UC8ma1yBt-7YNAEMJs4Y2IcA
+      - listitem:
+        - link "Vai Voltar Chorando (Resenha dos Amigos)":
+          - /url: browse/MPREb_egypyK9CZCf
+        - link "Vai Voltar Chorando (Resenha dos Amigos)":
+          - /url: browse/MPREb_egypyK9CZCf
+        - text: Single •
+        - link "DG e Batidão Stronda":
+          - /url: channel/UCY-8KRyVKrcvporAp75BjUw
+        - text: e
+        - link "DLIMA7":
+          - /url: channel/UConQylBZvWhJKOD4uML8CZQ
+      - listitem:
+        - link "Pode Chorar (Playback)":
+          - /url: browse/MPREb_aTUDwI75VQG
+        - link "Pode Chorar (Playback)":
+          - /url: browse/MPREb_aTUDwI75VQG
+        - text: Single •
+        - link "Gerson Rufino":
+          - /url: channel/UCiV-rXvSZqhku7bv3HfnoVg
+        - text: e
+        - link "É Gospel Music":
+          - /url: channel/UC8ZzOkto2w3t2kOBaRNm80g
+      - listitem:
+        - link "JACK MATADOR AO SOM DO VIOLINO":
+          - /url: browse/MPREb_yRcdKu0Og2o
+        - link "JACK MATADOR AO SOM DO VIOLINO":
+          - /url: browse/MPREb_yRcdKu0Og2o
+        - text: Single •
+        - link "DjPablo MG":
+          - /url: channel/UCWBXwRsQ8mFt-LXqjBmUkrQ
+      - listitem:
+        - 'link "The Rolling Thunder Revue 1976: Fort Collins Colorado, May 23rd"':
+          - /url: browse/MPREb_q1OyenKesFT
+        - 'link "The Rolling Thunder Revue 1976: Fort Collins Colorado, May 23rd"':
+          - /url: browse/MPREb_q1OyenKesFT
+        - text: Álbum •
+        - link "Bob Dylan":
+          - /url: channel/UCBqkojCXby4zGkWX86FEY7Q
+      - listitem:
+        - link "Quem Trouxe Você (25 Anos de Casados, Bodas de Prata) (Playback)":
+          - /url: browse/MPREb_vdIflWqqbM7
+        - link "Quem Trouxe Você (25 Anos de Casados, Bodas de Prata) (Playback)":
+          - /url: browse/MPREb_vdIflWqqbM7
+        - text: Single •
+        - link "Eliane Fernandes":
+          - /url: channel/UC4EU81VB49CgvXPjqf8zYJA
+      - listitem:
+        - link "Dom de Iludir (Trilha Sonora da série Netflix)":
+          - /url: browse/MPREb_67kyHQAz8tq
+        - link "Dom de Iludir (Trilha Sonora da série Netflix)":
+          - /url: browse/MPREb_67kyHQAz8tq
+        - text: Single •
+        - link "Liniker":
+          - /url: channel/UCeEjdvNGeXbzCmuWrHp9lXw
+      - listitem:
+        - link "Josué Bom de Faixa - Você Me Fez Voar":
+          - /url: browse/MPREb_1H2yCY8Y0YM
+        - link "Josué Bom de Faixa - Você Me Fez Voar":
+          - /url: browse/MPREb_1H2yCY8Y0YM
+        - text: Single •
+        - link "Forró Hits":
+          - /url: channel/UCpOpFEabgrfWjXaxV86ByMg
+      - listitem:
+        - link "Acontece":
+          - /url: browse/MPREb_22knHAgqLsN
+        - link "Acontece":
+          - /url: browse/MPREb_22knHAgqLsN
+        - text: Single •
+        - link "Tarcísio do Acordeon":
+          - /url: channel/UCJGhXcHVf6xPelAlZq4XJOQ
+      - listitem:
+        - link "Aliança (Ao Vivo | Deluxe)":
+          - /url: browse/MPREb_oKlSBqzGqF4
+        - link "Aliança (Ao Vivo | Deluxe)":
+          - /url: browse/MPREb_oKlSBqzGqF4
+        - text: Álbum •
+        - link "Danilo e Davi":
+          - /url: channel/UCffWjqUO0JDOvH_F05qF4JA
+      - listitem:
+        - link "Até a Última Gota":
+          - /url: browse/MPREb_DIVuz4q9BDa
+        - link "Até a Última Gota":
+          - /url: browse/MPREb_DIVuz4q9BDa
+        - text: Álbum •
+        - link "Silfarley O Rei Da Seresta":
+          - /url: channel/UC07S_FTILkPdgW1OYDbDqDA
+      - listitem:
+        - link "Brega do Nobre 5.0":
+          - /url: browse/MPREb_Q4XenSZnvGs
+        - link "Brega do Nobre 5.0":
+          - /url: browse/MPREb_Q4XenSZnvGs
+        - text: Álbum •
+        - link "Leonne O Nobre":
+          - /url: channel/UCzjfsQK9fg7FkYm9tiPsshA
+      - listitem:
+        - link "Samat saappaat (part. Elia)":
+          - /url: browse/MPREb_5z5RuwyAiJ7
+        - link "Samat saappaat (part. Elia)":
+          - /url: browse/MPREb_5z5RuwyAiJ7
+        - text: Single •
+        - link "Panda":
+          - /url: channel/UCm_-Z3AAyEEAciecu61h8XA
+        - text: e
+        - link "Heinis":
+          - /url: channel/UCH6lbHNl_BLcgncSSWY9rSA
+      - listitem:
+        - link "SUIATSU":
+          - /url: browse/MPREb_OvTAhQg61Tp
+        - link "SUIATSU":
+          - /url: browse/MPREb_OvTAhQg61Tp
+        - text: Single •
+        - link "Stray Kids":
+          - /url: channel/UCIMmuidNJdncfMEelOU08Fg
+      - listitem:
+        - link "Mil Gracias":
+          - /url: browse/MPREb_o23FIIWIvqt
+        - link "Mil Gracias":
+          - /url: browse/MPREb_o23FIIWIvqt
+        - text: Álbum •
+        - link "Aline Barros":
+          - /url: channel/UCLht-MP7US76eAlqD1xuDng
+      - listitem:
+        - link "CIRCO DOS HORRORES 3 (part. Mistery e Onni)":
+          - /url: browse/MPREb_I9sp6Nqn08r
+        - link "CIRCO DOS HORRORES 3 (part. Mistery e Onni)":
+          - /url: browse/MPREb_I9sp6Nqn08r
+        - text: Single •
+        - link "7 Minutoz":
+          - /url: channel/UC7tLuFSDy-yNoNFUOxef8QA
+        - text: ", AniRap e"
+        - link "M4rkim":
+          - /url: channel/UC9WisrRm2nCKu_eDBxe2o2w
+      - listitem:
+        - link "O Silêncio Q Precede o Esporro (Ao Vivo)":
+          - /url: browse/MPREb_rtGDf77LvOU
+        - link "O Silêncio Q Precede o Esporro (Ao Vivo)":
+          - /url: browse/MPREb_rtGDf77LvOU
+        - text: Álbum •
+        - link "O Rappa":
+          - /url: channel/UCnRE3QCv2q6hSdpNHnucbSw
+      - listitem:
+        - link "Train Wreck":
+          - /url: browse/MPREb_SaOE7XPIvCI
+        - link "Train Wreck":
+          - /url: browse/MPREb_SaOE7XPIvCI
+        - text: EP •
+        - link "TommyMuzzic":
+          - /url: channel/UCIOzVH6F6iE_qpzIBDkJAyA
+    - heading "Momentos e gêneros" [level=2]:
+      - link "Momentos e gêneros":
+        - /url: moods_and_genres
+    - button "Mais"
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - button "Clima alegre"
+      - listitem:
+        - button "Em trânsito"
+      - listitem:
+        - button "Energia"
+      - listitem:
+        - button "Festa"
+      - listitem:
+        - button "Foco"
+      - listitem:
+        - button "Games"
+      - listitem:
+        - button "Músicas para relaxar"
+      - listitem:
+        - button "Romance"
+      - listitem:
+        - button "Sono"
+      - listitem:
+        - button "Treino"
+      - listitem:
+        - button "Triste"
+      - listitem:
+        - button "África"
+      - listitem:
+        - button "Árabe"
+      - listitem:
+        - button "Axé"
+      - listitem:
+        - button "Blues"
+      - listitem:
+        - button "Country"
+      - listitem:
+        - button "Dance e eletrônico"
+      - listitem:
+        - button "Datas especiais"
+      - listitem:
+        - button "Décadas"
+      - listitem:
+        - button "Família"
+      - listitem:
+        - button "Forró"
+      - listitem:
+        - button "Funk"
+      - listitem:
+        - button "Gospel"
+      - listitem:
+        - button "Hip-hop"
+      - listitem:
+        - button "Índia / Bollywood"
+      - listitem:
+        - button "J-Pop"
+      - listitem:
+        - button "Jazz"
+      - listitem:
+        - button "K-Pop"
+      - listitem:
+        - button "Latina"
+      - listitem:
+        - button "Metal"
+      - listitem:
+        - button "MPB"
+      - listitem:
+        - button "Música clássica"
+      - listitem:
+        - button "Música folk e acústica"
+      - listitem:
+        - button "Música indie e alternativa"
+      - listitem:
+        - button "Pop"
+      - listitem:
+        - button "Pop BR"
+      - listitem:
+        - button "R&B e soul"
+      - listitem:
+        - button "Rap e trap BR"
+      - listitem:
+        - button "Reggae e Caribe"
+      - listitem:
+        - button "Rock"
+      - listitem:
+        - button "Rock brasileiro"
+      - listitem:
+        - button "Samba e pagode"
+      - listitem:
+        - button "Sertanejo"
+      - listitem:
+        - button "Trilhas sonoras e musicais"
+    - heading "Episódios favoritos" [level=2]:
+      - link "Episódios favoritos":
+        - /url: podcasts/popular_episodes
+    - button "Mais"
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Reproduzir OUTRA COISA, COM GUILHERME FIUZA - 07/11/2026 - Revista Oeste":
+          - /url: watch?v=9inTByK_nFw
+          - button "Reproduzir OUTRA COISA, COM GUILHERME FIUZA - 07/11/2026 - Revista Oeste"
+        - link "OUTRA COISA, COM GUILHERME FIUZA - 07/11/2026":
+          - /url: podcast/9inTByK_nFw
+        - link "Outra Coisa":
+          - /url: playlist?list=PLa6ZAwmKhIlqlr3wVH_NwH-gt7K_9HckJ
+      - listitem:
+        - link "Reproduzir ORAÇÃO MAIS PODEROSA PARA DORMIR RÁPIDO E EM PAZ - Oração do Salmo 91 na Madrugada - Pastor Antônio Júnior":
+          - /url: watch?v=dEeHdqxYSok
+          - button "Reproduzir ORAÇÃO MAIS PODEROSA PARA DORMIR RÁPIDO E EM PAZ - Oração do Salmo 91 na Madrugada - Pastor Antônio Júnior"
+        - link "ORAÇÃO MAIS PODEROSA PARA DORMIR RÁPIDO E EM PAZ - Oração do Salmo 91 na Madrugada":
+          - /url: podcast/dEeHdqxYSok
+        - link "► DORMIR":
+          - /url: playlist?list=PLZuxwxPMsUiAxTM32pPHURFHDYvWCTF6N
+      - listitem:
+        - link "Reproduzir Ele explanou tudo que sabe da esposa do Ramon Dino! - GORGONOID":
+          - /url: watch?v=hw-9qB4UyA4
+          - button "Reproduzir Ele explanou tudo que sabe da esposa do Ramon Dino! - GORGONOID"
+        - link "Ele explanou tudo que sabe da esposa do Ramon Dino!":
+          - /url: podcast/hw-9qB4UyA4
+        - link "GORGONEWS":
+          - /url: playlist?list=PLVU1Fzg6UlKC9dQcxowAItb_4sRq1gbk1
+      - listitem:
+        - link "Reproduzir DURMA RÁPIDO e em PAZ com essa ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada - Orações do Pr. Antonio Júnior":
+          - /url: watch?v=AhuetHzRcXg
+          - button "Reproduzir DURMA RÁPIDO e em PAZ com essa ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada - Orações do Pr. Antonio Júnior"
+        - link "DURMA RÁPIDO e em PAZ com essa ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada":
+          - /url: podcast/AhuetHzRcXg
+        - link "ORAÇÃO PARA DORMIR":
+          - /url: playlist?list=PL27Oebq8-lNMDE-EIvxHPamLBhQhN8NWJ
+      - listitem:
+        - 'link "Reproduzir 07/11 - Oração da noite: “Boa noite, meu Jesus” - Padre Alex Nogueira"':
+          - /url: watch?v=pNuRfraIEIM
+          - 'button "Reproduzir 07/11 - Oração da noite: “Boa noite, meu Jesus” - Padre Alex Nogueira"'
+        - 'link "07/11 - Oração da noite: “Boa noite, meu Jesus”"':
+          - /url: podcast/pNuRfraIEIM
+        - link "ORAÇÃO DA NOITE":
+          - /url: playlist?list=PLFbuhFf6BE6E2Zz3dVISTBXK9haAYWUPM
+      - listitem:
+        - link "Reproduzir MELODY CANCELA SHOW E MALÉVOLA EXPÕE A VERDADE - Marcio Rolim":
+          - /url: watch?v=5cs3B_6bQsg
+          - button "Reproduzir MELODY CANCELA SHOW E MALÉVOLA EXPÕE A VERDADE - Marcio Rolim"
+        - link "MELODY CANCELA SHOW E MALÉVOLA EXPÕE A VERDADE":
+          - /url: podcast/5cs3B_6bQsg
+        - link "Podcast Marcio Rolim":
+          - /url: playlist?list=PLDkXmy76sR2jtpo9g3yLglcGKL-QvjN76
+      - listitem:
+        - link "Reproduzir ORAÇÃO DA NOITE DE HOJE 07-11 - Escreva seu Pedido de Oração - Pastor Antônio Júnior":
+          - /url: watch?v=JVFavXn6WkE
+          - button "Reproduzir ORAÇÃO DA NOITE DE HOJE 07-11 - Escreva seu Pedido de Oração - Pastor Antônio Júnior"
+        - link "ORAÇÃO DA NOITE DE HOJE 07-11 - Escreva seu Pedido de Oração":
+          - /url: podcast/JVFavXn6WkE
+        - link "► NOITE":
+          - /url: playlist?list=PLZuxwxPMsUiAkWXhXPhuSecvGbk2qwx6u
+      - listitem:
+        - link "Reproduzir Ele falou o que o Ramon Dino e Brandão precisava escutar! - GORGONOID":
+          - /url: watch?v=reH66dizvVQ
+          - button "Reproduzir Ele falou o que o Ramon Dino e Brandão precisava escutar! - GORGONOID"
+        - link "Ele falou o que o Ramon Dino e Brandão precisava escutar!":
+          - /url: podcast/reH66dizvVQ
+        - link "GORGONEWS":
+          - /url: playlist?list=PLVU1Fzg6UlKC9dQcxowAItb_4sRq1gbk1
+      - listitem:
+        - link "Reproduzir \"LUTADOR\" COVARDE GOSTA DE BATER E (QUASE) MATAR MULHERES E IDOSAS - LUCAS PORTELA DIZ NÃO LEMBRAR - Beto Ribeiro - CANAL OFICIAL":
+          - /url: watch?v=CQpNpGBRuBc
+          - button "Reproduzir \"LUTADOR\" COVARDE GOSTA DE BATER E (QUASE) MATAR MULHERES E IDOSAS - LUCAS PORTELA DIZ NÃO LEMBRAR - Beto Ribeiro - CANAL OFICIAL"
+        - link "\"LUTADOR\" COVARDE GOSTA DE BATER E (QUASE) MATAR MULHERES E IDOSAS - LUCAS PORTELA DIZ NÃO LEMBRAR":
+          - /url: podcast/CQpNpGBRuBc
+        - link "BETO RIBEIRO - CASOS COMENTADOS - CRIME":
+          - /url: playlist?list=PLlHCt9SnkpChkHbvvgv60uOFBf9bA-ynF
+      - listitem:
+        - link "Reproduzir 🌎 O perfil do NOVO CHEFE de GABINETE de TRUMP e a DEFESA dele a JAIR BOLSONARO ano PASSADO. - Ivan Kleber Fonseca":
+          - /url: watch?v=7ZUB2WaAOYg
+          - button "Reproduzir 🌎 O perfil do NOVO CHEFE de GABINETE de TRUMP e a DEFESA dele a JAIR BOLSONARO ano PASSADO. - Ivan Kleber Fonseca"
+        - link "🌎 O perfil do NOVO CHEFE de GABINETE de TRUMP e a DEFESA dele a JAIR BOLSONARO ano PASSADO.":
+          - /url: podcast/7ZUB2WaAOYg
+        - link "LIVES DIÁRIAS":
+          - /url: playlist?list=PLWelVMvBekiMmBBeQXO5FpCG0KGvX6T0z
+      - listitem:
+        - link "Reproduzir Brasil a caminho da recessão?; um exemplo para a justiça brasileira; estourou a bolha da IA? - Fernando Ulrich":
+          - /url: watch?v=NwAelGdJhVY
+          - button "Reproduzir Brasil a caminho da recessão?; um exemplo para a justiça brasileira; estourou a bolha da IA? - Fernando Ulrich"
+        - link "Brasil a caminho da recessão?; um exemplo para a justiça brasileira; estourou a bolha da IA?":
+          - /url: podcast/NwAelGdJhVY
+        - link "Ulrich Responde":
+          - /url: playlist?list=PLYKCQERMgWPi6uchrijBVtyD0clrPp46v
+      - listitem:
+        - 'link "Reproduzir 07/11/2026 - ORAÇÃO DA MANHÃ COM IZABEL FERREIRA . ‪: @IzabelFerreira - Izabel Ferreira"':
+          - /url: watch?v=72KXg_BwogE
+          - 'button "Reproduzir 07/11/2026 - ORAÇÃO DA MANHÃ COM IZABEL FERREIRA . ‪: @IzabelFerreira - Izabel Ferreira"'
+        - 'link "07/11/2026 - ORAÇÃO DA MANHÃ COM IZABEL FERREIRA . ‪: @IzabelFerreira"':
+          - /url: podcast/72KXg_BwogE
+        - link "ORAÇÃO DA MANHÃ AS 07:00":
+          - /url: playlist?list=PLaav6pR_ee_ZgfCEoyOPSUpUTnr5aymwv
+      - listitem:
+        - link "Reproduzir Terço de Aparecida com Pe. Antonio Maria - 07 de novembro 2026 [Mistérios Gozosos] - TV Aparecida":
+          - /url: watch?v=kPZ68HmigGo
+          - button "Reproduzir Terço de Aparecida com Pe. Antonio Maria - 07 de novembro 2026 [Mistérios Gozosos] - TV Aparecida"
+        - link "Terço de Aparecida com Pe. Antonio Maria - 07 de novembro 2026 [Mistérios Gozosos]":
+          - /url: podcast/kPZ68HmigGo
+        - link "Terço de Aparecida":
+          - /url: playlist?list=PLynfClZM8w1-pBvLqeXvBdZTTpzc0zr_S
+      - listitem:
+        - 'link "Reproduzir 7 de Novembro - Oração da Manhã Para Abençoar o Seu Dia #fabioteruel - Fábio Teruel"':
+          - /url: watch?v=MA69b-WdDWk
+          - 'button "Reproduzir 7 de Novembro - Oração da Manhã Para Abençoar o Seu Dia #fabioteruel - Fábio Teruel"'
+        - 'link "7 de Novembro - Oração da Manhã Para Abençoar o Seu Dia #fabioteruel"':
+          - /url: podcast/MA69b-WdDWk
+        - link "ORAÇÃO DO DIA | Fábio Teruel":
+          - /url: playlist?list=PLsmdF8qB5tiPr0jAVVdzRLiRCI9M70Muh
+      - listitem:
+        - link "Reproduzir CENTRÃO PISCA, MAS AINDA NÃO SE ENCANTA COM LULA 4 | WW - CNN Brasil":
+          - /url: watch?v=aIEgMFoiddM
+          - button "Reproduzir CENTRÃO PISCA, MAS AINDA NÃO SE ENCANTA COM LULA 4 | WW - CNN Brasil"
+        - link "CENTRÃO PISCA, MAS AINDA NÃO SE ENCANTA COM LULA 4 | WW":
+          - /url: podcast/aIEgMFoiddM
+        - link "WW — Programas na íntegra":
+          - /url: playlist?list=PL8cUMXM_077cm90zBEgAouTJqzxWJfVEu
+      - listitem:
+        - link "Reproduzir ORAÇÃO DA MANHÃ DE HOJE 07-11 - Escreva seu Pedido de Oração - Pastor Antônio Júnior":
+          - /url: watch?v=jJ7jnF0Z2JU
+          - button "Reproduzir ORAÇÃO DA MANHÃ DE HOJE 07-11 - Escreva seu Pedido de Oração - Pastor Antônio Júnior"
+        - link "ORAÇÃO DA MANHÃ DE HOJE 07-11 - Escreva seu Pedido de Oração":
+          - /url: podcast/jJ7jnF0Z2JU
+        - link "► MANHÃ":
+          - /url: playlist?list=PLZuxwxPMsUiCPPZp-dS74vlLL6K1tm-Y1
+      - listitem:
+        - link "Reproduzir Santo Terço - Sábado - 07 de novembro - Padre Alex Nogueira":
+          - /url: watch?v=zwZzsY1aMCo
+          - button "Reproduzir Santo Terço - Sábado - 07 de novembro - Padre Alex Nogueira"
+        - link "Santo Terço - Sábado - 07 de novembro":
+          - /url: podcast/zwZzsY1aMCo
+        - link "SANTO TERÇO":
+          - /url: playlist?list=PLFbuhFf6BE6GC1_HZth-EIH1KuViCsKME
+      - listitem:
+        - 'link "Reproduzir DE LESTE A OESTE - 06/11/2026 | O RECADO DAS URNAS - MIDTERMS 2026: O PODER TEM LIMITES - Revista Oeste"':
+          - /url: watch?v=OJ5qlpZiwK8
+          - 'button "Reproduzir DE LESTE A OESTE - 06/11/2026 | O RECADO DAS URNAS - MIDTERMS 2026: O PODER TEM LIMITES - Revista Oeste"'
+        - 'link "DE LESTE A OESTE - 06/11/2026 | O RECADO DAS URNAS - MIDTERMS 2026: O PODER TEM LIMITES"':
+          - /url: podcast/OJ5qlpZiwK8
+        - link "DE LESTE A OESTE":
+          - /url: playlist?list=PLa6ZAwmKhIlqLgY-nQ49ucz3ihagTWNAQ
+      - listitem:
+        - link "Reproduzir RAIO X SOBRE O BRASIL - Part. RUBÃO E ALDO REBELO - RedCast [Oficial]":
+          - /url: watch?v=BSIjdd4tUAY
+          - button "Reproduzir RAIO X SOBRE O BRASIL - Part. RUBÃO E ALDO REBELO - RedCast [Oficial]"
+        - link "RAIO X SOBRE O BRASIL - Part. RUBÃO E ALDO REBELO":
+          - /url: podcast/BSIjdd4tUAY
+        - link "REDCAST":
+          - /url: playlist?list=PL3H3MYssMQ3iRkWNGt6DEu70J_uerFT4o
+      - listitem:
+        - 'link "Reproduzir Leonardo Trevisan: ''Crise no Paraguai é fracasso do neoliberalismo'' - TV 247"':
+          - /url: watch?v=tABvqDYw-oM
+          - 'button "Reproduzir Leonardo Trevisan: ''Crise no Paraguai é fracasso do neoliberalismo'' - TV 247"'
+        - 'link "Leonardo Trevisan: ''Crise no Paraguai é fracasso do neoliberalismo''"':
+          - /url: podcast/tABvqDYw-oM
+        - link "Entrevistas":
+          - /url: playlist?list=PL9AEHeaYiogIJB1GWA7yAxr1L_eCPQZKD
+      - listitem:
+        - 'link "Reproduzir VISITEI A ANNABELLE REAL NO MUSEU WARREN - Bastidores do meu Halloween nos EUA | LendaCast Solo #114 - Daniel Pires"':
+          - /url: watch?v=CZyhcDIYnpU
+          - 'button "Reproduzir VISITEI A ANNABELLE REAL NO MUSEU WARREN - Bastidores do meu Halloween nos EUA | LendaCast Solo #114 - Daniel Pires"'
+        - 'link "VISITEI A ANNABELLE REAL NO MUSEU WARREN - Bastidores do meu Halloween nos EUA | LendaCast Solo #114"':
+          - /url: podcast/CZyhcDIYnpU
+        - link "LENDACAST AO VIVO":
+          - /url: playlist?list=PLwteUpIIj-uO3BXcPnAkMu9KVrZQupSU-
+      - listitem:
+        - link "Reproduzir ADORMEÇA FÁCIL com esta ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada - Orações do Pr. Antonio Júnior":
+          - /url: watch?v=xOb_PVcs_B8
+          - button "Reproduzir ADORMEÇA FÁCIL com esta ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada - Orações do Pr. Antonio Júnior"
+        - link "ADORMEÇA FÁCIL com esta ORAÇÃO PODEROSA - Poderosa Oração do Salmo 91 na Madrugada":
+          - /url: podcast/xOb_PVcs_B8
+        - link "ORAÇÃO PARA DORMIR":
+          - /url: playlist?list=PL27Oebq8-lNMDE-EIvxHPamLBhQhN8NWJ
+      - listitem:
+        - link "Reproduzir HELOISA VILELA | O que muda nos EUA depois das eleições parlamentares | 20 MINUTOS - Opera Mundi":
+          - /url: watch?v=T4qSP0ECWPU
+          - button "Reproduzir HELOISA VILELA | O que muda nos EUA depois das eleições parlamentares | 20 MINUTOS - Opera Mundi"
+        - link "HELOISA VILELA | O que muda nos EUA depois das eleições parlamentares | 20 MINUTOS":
+          - /url: podcast/T4qSP0ECWPU
+        - link "20 Minutos - entrevistas ao vivo em Opera Mundi":
+          - /url: playlist?list=PL_Q9S5SSNNLgAh3NPYfxrV--NR1-BfuS5
+      - listitem:
+        - link "Reproduzir A MAIS FORTE ORAÇÃO para NOITES DE SONO RESTAURADOR - Oração do SALMO 91 com Música Calmante - Pastor Antônio Júnior":
+          - /url: watch?v=pxFSHO8QgyY
+          - button "Reproduzir A MAIS FORTE ORAÇÃO para NOITES DE SONO RESTAURADOR - Oração do SALMO 91 com Música Calmante - Pastor Antônio Júnior"
+        - link "A MAIS FORTE ORAÇÃO para NOITES DE SONO RESTAURADOR - Oração do SALMO 91 com Música Calmante":
+          - /url: podcast/pxFSHO8QgyY
+        - link "► DORMIR":
+          - /url: playlist?list=PLZuxwxPMsUiAxTM32pPHURFHDYvWCTF6N
+    - heading "Em alta" [level=2]:
+      - link "Em alta":
+        - /url: playlist?list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+    - button "Mais"
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "MILKSHAKE - EMILLY VICK E VOID (clipe oficial)":
+          - /url: watch?v=XMPVhbO2YaE&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Emilly Vick":
+          - /url: channel/UC8_edR1f69s2R0O3JkmY1yQ
+        - text: • 9,7 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Eu Me Rendo (Ao Vivo)":
+          - /url: watch?v=izDBFPw7JHg&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Felipe e Rodrigo":
+          - /url: channel/UCMoYu0mVhcdW5IyZoWoYNBQ
+        - text: • 3,7 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Geme Baixo (part. Galdino Mc, Honaiser e DJ JOÃO PEREIRA)":
+          - /url: watch?v=Y4nJWY4FXd0&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "G.A":
+          - /url: channel/UCuhMDcwT5lVE4J9t1IeoFUw
+        - text: ","
+        - link "Menor Mc":
+          - /url: channel/UChFSTXEm-6nw7ExlsN01BSQ
+        - text: ","
+        - link "DJ Dael":
+          - /url: channel/UCUV-AjH5B3kL_QFrJ4XqimQ
+        - text: e
+        - link "MC Jvila":
+          - /url: channel/UCGWmpjdx-geQJATDvn-pimQ
+        - text: • 2,9 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Fala Pra Sua Saudade (Ao Vivo)":
+          - /url: watch?v=gTWAJRwfb6M&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Felipe e Rodrigo":
+          - /url: channel/UCMoYu0mVhcdW5IyZoWoYNBQ
+        - text: • 903 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Flash (Minha Mente) 💠":
+          - /url: watch?v=akkCnFdhPWo&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Zé Vaqueiro":
+          - /url: channel/UCwakabz1Q6ZThlmsLUWKPvg
+        - text: e
+        - link "Hugo & Guilherme":
+          - /url: channel/UC86xOhUitK56NVSH1u-eldg
+        - text: • 34 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Cuidar de Mim (Ao Vivo)":
+          - /url: watch?v=Wq_iqOyOgv8&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Felipe e Rodrigo":
+          - /url: channel/UCMoYu0mVhcdW5IyZoWoYNBQ
+        - text: • 689 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Meus Dedinhos - Música Infantil e Aprendizado":
+          - /url: watch?v=-kXmc3SG5Zc&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Clube do Pititico":
+          - /url: channel/UCZddulmLYBd_vYZrlRoZsuA
+        - text: • 2 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Mon Amour":
+          - /url: watch?v=pozGekTOAGs&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Marina Sena":
+          - /url: channel/UC3QVrFRI68r50U7moc6jL_A
+        - text: e
+        - link "BACO EXU DO BLUES":
+          - /url: channel/UCdQva0BwhG7PmgdOAqrDHHg
+        - text: • 2,6 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Vai Matar Papai":
+          - /url: watch?v=vWh1ExXztHU&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Os Feras do Pizeiro":
+          - /url: channel/UC3sGNzwHY3gpssMspf7SOQw
+        - text: •
+        - link "Vai Matar Papai":
+          - /url: browse/MPREb_DWIRfE4QsWg
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Pra Não Pensar em Você":
+          - /url: watch?v=eF4IF7qG9d0&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Zezé Di Camargo & Luciano":
+          - /url: channel/UCFDwz2_-kmt3V_SGiDU7Wuw
+        - text: • 1 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Ainda Gosto de Você / Coração Deserto / Por Tão Pouco (Ao Vivo)":
+          - /url: watch?v=bu-b9b_xfAk&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Grupo Benzadeus":
+          - /url: channel/UCLXf4pCH_ifAlEw2CLcFD2Q
+        - text: • 270 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Tempo Perdido (Ao Vivo em Belém)":
+          - /url: watch?v=UCX3RpNsc6Y&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Zé Vaqueiro":
+          - /url: channel/UCwakabz1Q6ZThlmsLUWKPvg
+        - text: e
+        - link "João Gomes":
+          - /url: channel/UCAgLj3O_AeIqr9ZKfgZLj8w
+        - text: • 319 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Melatonina (Ao Vivo em Belém)":
+          - /url: watch?v=MJcs8odpuBY&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Zé Vaqueiro":
+          - /url: channel/UCwakabz1Q6ZThlmsLUWKPvg
+        - text: • 4 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Ela Só Pensa Em Beijar (Ao Vivo)":
+          - /url: watch?v=SqYqwF-0ye4&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Natanzinho Lima":
+          - /url: channel/UCJqd5Ejxi_fPcttEQ-E7hFw
+        - text: • 307 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Bi Festinha":
+          - /url: watch?v=aEh0-zAhyLI&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Puterrier":
+          - /url: channel/UCXeACLEBawE4ACnOmXBuyVA
+        - text: ","
+        - link "HITMAKER":
+          - /url: channel/UC0cbevFlijcvupmW9IYr_rQ
+        - text: e
+        - link "LUDMILLA":
+          - /url: channel/UC4KXS3GEtDrcpKL0yHsgLZQ
+        - text: • 1,1 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Farra É Comigo":
+          - /url: watch?v=L-WkxnJHujw&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Mari Fernandez":
+          - /url: channel/UCgdng0uA3fUklL7pE1zyrKg
+        - text: • 634 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Vitória Souza | Vou Me Levantar [Clipe Oficial]":
+          - /url: watch?v=cluNgJHvjME&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Todah Music":
+          - /url: channel/UCpf5YXmzGHC4m5uLCdlrrfA
+        - text: • 768 mil visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Vai Matar Papai":
+          - /url: watch?v=jQkTSnx7n8I&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "DIOVANE SEVERO":
+          - /url: channel/UCCsg4sSiSrZt9FcCNMeYyNw
+        - text: •
+        - link "Vai Matar Papai":
+          - /url: browse/MPREb_dzqJksRUfxl
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Quem Será / Para Tudo (Ao Vivo)":
+          - /url: watch?v=MZXtFVDkWEo&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Farias":
+          - /url: channel/UCVPUh_7YpdQ1DQp6bPa4l0A
+        - text: e
+        - link "Grupo Benzadeus":
+          - /url: channel/UCLXf4pCH_ifAlEw2CLcFD2Q
+        - text: • 2,4 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Acontece":
+          - /url: watch?v=bUJ9rnVYQ0M&list=OLAK5uy_nxSJNrV0WQ9XbKv_4R9Y98EYwJnZBgkfg
+        - link "Tarcísio do Acordeon":
+          - /url: channel/UCJGhXcHVf6xPelAlZq4XJOQ
+        - text: • 3 mi de visualizações
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+    - heading "Novos vídeos" [level=2]:
+      - link "Novos vídeos":
+        - /url: new_releases/videos
+    - button "Mais"
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Vallenato Mix (Diomedes Diaz) | By Doze":
+          - /url: watch?v=ccTMQmlge20
+        - text: Vallenato Mix (Diomedes Diaz) | By Doze
+        - link "Juancho Rois":
+          - /url: channel/UCOefjMfqsBC7fZaalYP2Xfg
+        - text: e
+        - link "Diomedes Díaz":
+          - /url: channel/UCD-tJUeIeVFeTGstnnwRNGA
+        - text: • 21 mil visualizações
+      - listitem:
+        - link "Geme Baixo (part. Galdino Mc, Honaiser e DJ JOÃO PEREIRA)":
+          - /url: watch?v=Y4nJWY4FXd0
+        - text: Geme Baixo (part. Galdino Mc, Honaiser e DJ JOÃO PEREIRA)
+        - link "G.A":
+          - /url: channel/UCuhMDcwT5lVE4J9t1IeoFUw
+        - text: ","
+        - link "Menor Mc":
+          - /url: channel/UChFSTXEm-6nw7ExlsN01BSQ
+        - text: ","
+        - link "DJ Dael":
+          - /url: channel/UCUV-AjH5B3kL_QFrJ4XqimQ
+        - text: e
+        - link "MC Jvila":
+          - /url: channel/UCGWmpjdx-geQJATDvn-pimQ
+        - text: • 2,9 mi de visualizações
+      - listitem:
+        - link "Aceito Seu Jogo (Ao Vivo)":
+          - /url: watch?v=IMGtQ7W2Au4
+        - text: Aceito Seu Jogo (Ao Vivo)
+        - link "Mumuzinho":
+          - /url: channel/UCDW6Jl4DxgwzYOJZtQ_EQVQ
+        - text: e
+        - link "Thais Macedo":
+          - /url: channel/UCXDPvR1b4GYyTAvbFL5isbA
+        - text: • 722 mil visualizações
+      - listitem:
+        - link "LUA POR LUA":
+          - /url: watch?v=U7oaYvNsC8k
+        - text: LUA POR LUA
+        - link "Murillo e LT no Beat":
+          - /url: channel/UCpHNwxzyeYK0D28BXXyh2gw
+        - text: e
+        - link "Hariel MC":
+          - /url: channel/UCZEu7IEubkJEBuNVIsCO3bg
+        - text: • 1,8 mi de visualizações
+      - listitem:
+        - link "Feather":
+          - /url: watch?v=kLbn61Z4LDI
+        - text: Feather
+        - link "Sabrina Carpenter":
+          - /url: channel/UCz51ZodJbYUNfkdPHOjJKKw
+        - text: • 179 mi de visualizações
+      - listitem:
+        - link "❤️ Quel Bacio di Novembre, Amore Mio - A 1960s Italian Autumn Love Song in Verona | Vintage Music":
+          - /url: podcast/GLNNsj42XJ0
+        - link "❤️ Quel Bacio di Novembre, Amore Mio - A 1960s Italian Autumn Love Song in Verona | Vintage Music":
+          - /url: podcast/GLNNsj42XJ0
+        - text: 5 min 47 s •
+        - link "Riviera Vintage Music":
+          - /url: channel/UCpP3lhgqRxzIQNvvlFGMQEQ
+      - listitem:
+        - link "เด๋อ - โจอี้ ภูวศิษฐ์ (JOEY PHUWASIT)「Official MV」":
+          - /url: watch?v=JpB0UtlKG2Y
+        - text: เด๋อ - โจอี้ ภูวศิษฐ์ (JOEY PHUWASIT)「Official MV」
+        - link "JOEY PHUWASIT":
+          - /url: channel/UCu6NHPS6IIGwLe4GyHBEGeA
+        - text: • 5,2 mi de visualizações
+      - listitem:
+        - link "Standing Next to You":
+          - /url: watch?v=UNo0TG9LwwI
+        - text: Standing Next to You
+        - link "Jung Kook":
+          - /url: channel/UC-pOuHFcndLpyfWSPVqXt_A
+        - text: • 243 mi de visualizações
+      - listitem:
+        - link "La Vida No Regala Nada":
+          - /url: watch?v=U_gkaLIdtiY
+        - text: La Vida No Regala Nada
+        - link "Max Soul Hits":
+          - /url: channel/UCnMsgEX9ljtMmQ7orjucSUw
+        - text: • 56 mil visualizações
+      - listitem:
+        - link "Só Vai Saber (Ao Vivo)":
+          - /url: watch?v=IA1bqiKSv_o
+        - text: Só Vai Saber (Ao Vivo)
+        - link "Lauana Prado":
+          - /url: channel/UC2DXTFA6ACS0Qb9QtFlAVDg
+        - text: e
+        - link "Lucas Lucco":
+          - /url: channel/UChtrmjH03kgXJrgLEjlI3cA
+        - text: • 5,5 mi de visualizações
+      - listitem:
+        - link "La Gerencia [Remix] (part. Wisin, Fronti, Arcangel e Hanzel La H)":
+          - /url: watch?v=J3jyzFP9vog
+        - text: La Gerencia [Remix] (part. Wisin, Fronti, Arcangel e Hanzel La H)
+        - link "Tito \"El Bambino\"":
+          - /url: channel/UCuIJvmSQ2nHzUVD2o5CTc_A
+        - text: ","
+        - link "Eladio Carrion":
+          - /url: channel/UC7YJ69rJ9qtVh6SjYFs4cGg
+        - text: ","
+        - link "Ozuna":
+          - /url: channel/UCKEFjh4JL-OyMI8z3h5Coaw
+        - text: e
+        - link "Ñengo Flow":
+          - /url: channel/UCeNt9djCuN7-Vr5J3kK_GkQ
+        - text: • 8,3 mi de visualizações
+      - listitem:
+        - link "Now And Then":
+          - /url: watch?v=Opxhh9Oh3rg
+        - text: Now And Then
+        - link "The Beatles":
+          - /url: channel/UC2XdaAVUannpujzv32jcouQ
+        - text: • 87 mi de visualizações
+      - listitem:
+        - link "B-rlin - Mix Cumbias Clasicas 90's (Video Oficial)":
+          - /url: watch?v=pvmiMaW-so8
+        - text: B-rlin - Mix Cumbias Clasicas 90's (Video Oficial)
+        - link "B-RLIN":
+          - /url: channel/UC0uPtpqGWZ0sX2yqr4xLHzw
+        - text: • 33 mil visualizações
+      - listitem:
+        - link "O Retorno de Jedi":
+          - /url: watch?v=iX01h0yDmRA
+        - text: O Retorno de Jedi
+        - link "Xamã":
+          - /url: channel/UCp0WcprBoKX5HvfQ3-RrUvw
+        - text: ","
+        - link "Major RD":
+          - /url: channel/UCS8fsyxOeR3-cGcgFNlPEXA
+        - text: e
+        - link "Rock Danger":
+          - /url: channel/UCeasmDSFq54PhlMt2e_ACbQ
+        - text: • 1,7 mi de visualizações
+      - listitem:
+        - link "CU' NUIE (Visual Video)":
+          - /url: watch?v=DwzdbkdMLJ4
+        - text: CU' NUIE (Visual Video)
+        - link "Rocco Hunt":
+          - /url: channel/UC35dUmrV7oynGKptFYeVxZA
+        - text: e
+        - link "Clementino":
+          - /url: channel/UCQjZxVcn0o5XpCWiSIQZesw
+        - text: • 30 mil visualizações
+      - listitem:
+        - link "LAJA x ANUEL AA - TUSSI (Video Oficial)":
+          - /url: watch?v=T0rVuheJOp8
+        - text: LAJA x ANUEL AA - TUSSI (Video Oficial)
+        - link "LAJA":
+          - /url: channel/UCA_R5DJK_2lI4fAjNOyn7pw
+        - text: • 2,2 mi de visualizações
+      - listitem:
+        - link "CALIFORNIA DREAM (Visual Video)":
+          - /url: watch?v=45c-oC9rO6o
+        - text: CALIFORNIA DREAM (Visual Video)
+        - link "Rocco Hunt":
+          - /url: channel/UC35dUmrV7oynGKptFYeVxZA
+        - text: e
+        - link "Clementino":
+          - /url: channel/UCQjZxVcn0o5XpCWiSIQZesw
+        - text: • 39 mil visualizações
+      - listitem:
+        - link "Vitória Souza | Vou Me Levantar [Clipe Oficial]":
+          - /url: watch?v=cluNgJHvjME
+        - text: Vitória Souza | Vou Me Levantar [Clipe Oficial]
+        - link "Todah Music":
+          - /url: channel/UCpf5YXmzGHC4m5uLCdlrrfA
+        - text: • 768 mil visualizações
+      - listitem:
+        - 'link "MIX CANTINERO – ROLY EL SOLTERITO / ESTRENO OFICIAL 2027 📞 Contratos: 960760462"':
+          - /url: watch?v=WM_L1YETZTU
+        - text: "MIX CANTINERO – ROLY EL SOLTERITO / ESTRENO OFICIAL 2027 📞 Contratos: 960760462"
+        - link "Roly el solterito":
+          - /url: channel/UC8XYPYy5_oSK3klbKRQWCpg
+        - text: • 20 mil visualizações
+      - listitem:
+        - link "Qué bien me queda ser yo":
+          - /url: watch?v=YE5SxQkChKw
+        - text: Qué bien me queda ser yo
+        - link "Thiago Navarro Music":
+          - /url: channel/UCzOAH9SIq03SR1OVog0A2Kw
+        - text: • 546 mil visualizações
+      - listitem:
+        - link "Như Một Người Rưng":
+          - /url: watch?v=hGu7BVQy5G0
+        - text: Như Một Người Rưng
+        - link "Hà An Huy":
+          - /url: channel/UCVWgGEt3NccPKhlNA8Sm0vA
+        - text: e
+        - link "OSAD":
+          - /url: channel/UCyJRT7H4eUHcCpAZ_sbP2jg
+        - text: • 13 mi de visualizações
+      - listitem:
+        - link "NO SCUSE (Visual Video)":
+          - /url: watch?v=OMMA3axWfYs
+        - text: NO SCUSE (Visual Video)
+        - link "Rocco Hunt":
+          - /url: channel/UC35dUmrV7oynGKptFYeVxZA
+        - text: e
+        - link "Clementino":
+          - /url: channel/UCQjZxVcn0o5XpCWiSIQZesw
+        - text: • 31 mil visualizações
+      - listitem:
+        - link "Sangre Cumbiera - Ven junto a mi / Ayer me dijeron / Tu amor fue una mentira (Video oficial)":
+          - /url: watch?v=Idevig_3ODk
+        - text: Sangre Cumbiera - Ven junto a mi / Ayer me dijeron / Tu amor fue una mentira (Video oficial)
+        - link "Sangre Cumbiera":
+          - /url: channel/UC9yV2eaZZ6dv-JgDR18vNFA
+        - text: • 462 mil visualizações
+      - listitem:
+        - link "de volta pra casa":
+          - /url: watch?v=q5da-HTZ31A
+        - text: de volta pra casa
+        - link "JUNIOR":
+          - /url: channel/UCmmCOX3rXJv7hl22EqYO3kg
+        - text: • 3,1 mi de visualizações

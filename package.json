@@ -1,0 +1,26 @@
+{
+  "name": "youtube-music-clone",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "0.525.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "youtubei.js": "^18.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@vitejs/plugin-react": "4.3.4",
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0",
+    "tailwindcss": "^4.1.12",
+    "vite": "5.4.19"
+  }
+}

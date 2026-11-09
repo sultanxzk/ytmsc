@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yt-red: #ff0033;
+  --font-sans: "YouTube Sans", "Roboto", "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+:root {
+  --yt-bg: #131313;
+  --yt-sidebar: #131313;
+  --yt-surface: #212121;
+  --yt-hover: rgba(255, 255, 255, 0.1);
+  --yt-border: rgba(255, 255, 255, 0.12);
+  --yt-red: #ff0033;
+  --yt-red-soft: #ff5a5a;
+  --yt-text: #ffffff;
+  --yt-text2: #aaaaaa;
+  --thumb: rgba(255, 255, 255, 0.16);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--yt-bg);
+  color: var(--yt-text);
+  font-family: "YouTube Sans", "Roboto", "Inter", "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  overscroll-behavior: none;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(255, 0, 51, 0.85);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cover-card-size, .album-card-size, .artist-card-size {
+    width: 132px !important;
+    height: 132px !important;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* scrollbars customizadas escuras e discretas */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumb) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--thumb);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}
+
+/* gradiente dinâmico atmosférico — cor extraída da capa, some até #131313 (oficial) */
+.yt-home-grad {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #131313 460px) var(--dyn, linear-gradient(180deg, transparent 0%, #131313 460px));
+  background-blend-mode: normal;
+}
+
+/* equalizador vermelho/branco na faixa que está tocando */
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  animation: eq 0.9s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.eq-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.eq-bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.eq-white .eq-bar:nth-child(2),
+.eq-white .eq-bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* transições suaves 150-200ms em botões/hovers/troca de telas */
+.yt-btn,
+button,
+a {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes nowPlayingIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.now-playing-enter {
+  animation: nowPlayingIn 0.35s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+/* ============================================================
+   VISUAL POLISH — fidelidade YouTube Music (restaurado)
+   ============================================================ */
+
+/* 1. Fundo limpo com vinheta sutil como o oficial (oficial usa #131313, não #030303) */
+.yt-home-grad {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,0.025) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, #131313 460px) var(--dyn, linear-gradient(180deg, transparent 0%, #131313 460px));
+}
+
+/* 2. Cards: sombra + profundidade + hover elevado */
+.group .rounded-md,
+.group .rounded-xl {
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.2s ease;
+}
+.group {
+  will-change: transform;
+}
+.group:hover .rounded-md,
+.group:hover .rounded-xl {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+.group:hover img.object-cover {
+  transform: scale(1.03);
+}
+.group img.object-cover {
+  transition: transform 0.25s ease;
+}
+
+/* 3. Linha de track: hover com borda sutil */
+.group.flex.items-center {
+  border: 1px solid transparent;
+}
+.group.flex.items-center:hover {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* 4. Scroll suave nas seções carrossel */
+.flex.overflow-x-auto {
+  scroll-behavior: smooth;
+  scroll-padding: 12px;
+}
+
+/* 5. Header sólido ao rolar (a classe já controla fundo; reforço visual) */
+header {
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+header[class*="bg-"] {
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+/* 6. Inputs com foco visível */
+input:focus {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 7. Botões com toque visual */
+button:active {
+  transform: scale(0.97);
+}
+
+/* 8. Seleção de texto no tema */
+::selection {
+  background: rgba(255, 0, 0, 0.35);
+  color: #fff;
+}
+
+/* 9. Fade-up mais suave + escalonamento por delay de posição */
+.fade-up {
+  animation: fadeUp 0.45s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+/* 10. Skeleton com shimmer */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.animate-pulse {
+  background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0.08) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* 11. Texto do letreiro (Now Playing) com glow sutil */
+.now-playing-enter h2 {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* 12. Equalizador com glow */
+.eq-bar {
+  filter: drop-shadow(0 0 4px rgba(255, 0, 51, 0.45));
+}
+.eq-white .eq-bar {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.45));
+}
+
+/* ============================================================
+   MELHORIAS DE VISUAL E FUNÇÕES — lote 1
+   ============================================================ */
+
+/* Toque visual mais rico + feedback de curtida */
+@keyframes popIn {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.pop-in { animation: popIn 0.35s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+
+@keyframes shimmerCard {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.toast-in { animation: toastIn 0.25s ease both; }
+
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.45); }
+  100% { transform: scale(1); }
+}
+.heart-pop { animation: heartPop 0.4s cubic-bezier(0.2, 0.8, 0.3, 1); }
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.slide-in-right { animation: slideInRight 0.3s ease both; }
+
+/* Range inputs mais bonitos (volume, progresso) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Cards: gradiente dourado sutil no hover + título com clamp */
+.card-gradient {
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.72) 100%);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Fundo limpo como o oficial (oficial usa #131313, não #030303) */
+.yt-home-grad {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,0.025) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, #131313 460px) var(--dyn, linear-gradient(180deg, transparent 0%, #131313 460px));
+}
+
+/* Linha de track ativa com accent lateral */
+.track-active {
+  box-shadow: inset 3px 0 0 0 var(--yt-red);
+}
+
+/* Botão primário premium */
+.btn-primary {
+  box-shadow: 0 8px 24px rgba(255, 0, 51, 0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 10px 28px rgba(255, 0, 51, 0.45);
+}
+
+/* Skeleton mais suave */
+.skeleton-soft {
+  background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.06) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

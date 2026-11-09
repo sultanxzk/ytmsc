@@ -1,0 +1,619 @@
+- document:
+  - navigation:
+    - button "Guide" [pressed]
+    - link "Início":
+      - /url: /
+    - search:
+      - button "Iniciar pesquisa"
+      - combobox "Pesquise músicas, álbuns, artistas e podcasts"
+    - button "Conectar a um dispositivo"
+    - button
+    - link "Fazer login":
+      - /url: https://accounts.google.com/ServiceLogin?ltmpl=music&service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dpt%26next%3Dhttps%253A%252F%252Fmusic.youtube.com%252F%26feature%3D__FEATURE__&hl=pt-BR
+  - navigation:
+    - link "Início"
+    - link "Explorar"
+    - link "Biblioteca"
+    - button "Fazer login"
+    - text: Sign in to create & share playlists, get personalized recommendations, and more.
+  - main:
+    - tab "Podcasts"
+    - tab "Para dormir"
+    - tab "Para ouvir no trânsito"
+    - tab "Relax"
+    - tab "Romance"
+    - tab "Triste"
+    - tab "Para treinar"
+    - tab "Energia"
+    - tab "Festa"
+    - tab "Positividade"
+    - tab "Foco"
+    - heading "Clássicos da madrugada" [level=2]
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Reproduzir Pop dos anos 80 e 90 Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_ncZupy8fKgGfrLtakKMloD-yOpTo4OTg8
+          - button "Reproduzir Pop dos anos 80 e 90"
+          - button "Menu de ações"
+        - link "Pop dos anos 80 e 90":
+          - /url: playlist?list=RDCLAK5uy_ncZupy8fKgGfrLtakKMloD-yOpTo4OTg8
+        - text: Cher, Cyndi Lauper, Des'ree, Prince & The Revolution
+      - listitem:
+        - link "Reproduzir Hits dos anos 70 Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_k61TD2ooFFwd6Gsuj8YUcnb8MD0IvwjyM
+          - button "Reproduzir Hits dos anos 70"
+          - button "Menu de ações"
+        - link "Hits dos anos 70":
+          - /url: playlist?list=RDCLAK5uy_k61TD2ooFFwd6Gsuj8YUcnb8MD0IvwjyM
+        - text: David Bowie, ABBA, Rita Lee, Elis Regina
+      - listitem:
+        - link "Reproduzir Eu cresci nos anos 80 Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_mHWufJiG75yoHNnR65Vwl9hz6xl699kbg
+          - button "Reproduzir Eu cresci nos anos 80"
+          - button "Menu de ações"
+        - link "Eu cresci nos anos 80":
+          - /url: playlist?list=RDCLAK5uy_mHWufJiG75yoHNnR65Vwl9hz6xl699kbg
+        - text: Michael Jackson, Legiao Urbana, Echo & The Bunnymen, Titãs
+      - listitem:
+        - link "Reproduzir Rock anos 90 Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_nL3NUS4H91--fhm-6J4IYqen3xCuPLG1w
+          - button "Reproduzir Rock anos 90"
+          - button "Menu de ações"
+        - link "Rock anos 90":
+          - /url: playlist?list=RDCLAK5uy_nL3NUS4H91--fhm-6J4IYqen3xCuPLG1w
+        - text: Green Day, Nirvana, Pearl Jam, Foo Fighters
+      - listitem:
+        - link "Reproduzir Presenting Pink Floyd Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_nPN5nGhNWMuq-NC1COQ7_tMl2r5SxSgKE
+          - button "Reproduzir Presenting Pink Floyd"
+          - button "Menu de ações"
+        - link "Presenting Pink Floyd":
+          - /url: playlist?list=RDCLAK5uy_nPN5nGhNWMuq-NC1COQ7_tMl2r5SxSgKE
+        - text: Pink Floyd
+      - listitem:
+        - 'link "Reproduzir Cantoria de fim de noite: internacional Menu de ações"':
+          - /url: playlist?list=RDCLAK5uy_l0Rvhv_hLSjDlZpgR3TnnGxIOKAZ3BH2w
+          - 'button "Reproduzir Cantoria de fim de noite: internacional"'
+          - button "Menu de ações"
+        - 'link "Cantoria de fim de noite: internacional"':
+          - /url: playlist?list=RDCLAK5uy_l0Rvhv_hLSjDlZpgR3TnnGxIOKAZ3BH2w
+        - text: The Beatles, ABBA, The Killers, Oasis
+      - listitem:
+        - link "Synth pop dos anos 80":
+          - /url: playlist?list=RDCLAK5uy_n1i-4KsL0HZ9pwtz4ANf8UgZerROiCH5Q
+        - link "Synth pop dos anos 80":
+          - /url: playlist?list=RDCLAK5uy_n1i-4KsL0HZ9pwtz4ANf8UgZerROiCH5Q
+        - text: Depeche Mode, Pet Shop Boys, The Human League, Orchestral Manoeuvres In The Dark
+    - heading "Bons sonhos" [level=2]
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Reproduzir Música acústica para dormir Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_ntOL7kXTRxvIvmIsrYzKQ_MEpBdIywpQc
+          - button "Reproduzir Música acústica para dormir"
+          - button "Menu de ações"
+        - link "Música acústica para dormir":
+          - /url: playlist?list=RDCLAK5uy_ntOL7kXTRxvIvmIsrYzKQ_MEpBdIywpQc
+        - text: Sufjan Stevens, Iron & Wine, Bon Iver, Jack Johnson
+      - listitem:
+        - link "Reproduzir Indie de ninar Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_mnKbfhUjUd3pHiBjNTWyxOlPQ5FzL4Pe4
+          - button "Reproduzir Indie de ninar"
+          - button "Menu de ações"
+        - link "Indie de ninar":
+          - /url: playlist?list=RDCLAK5uy_mnKbfhUjUd3pHiBjNTWyxOlPQ5FzL4Pe4
+        - text: Cat Power, Devendra Banhart, Lana Del Rey, Sharon Van Etten
+      - listitem:
+        - link "Reproduzir MPB pra ir pra cama Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_mQebvQZ4VbMJGD4BhZIlffqj86YeKkWkg
+          - button "Reproduzir MPB pra ir pra cama"
+          - button "Menu de ações"
+        - link "MPB pra ir pra cama":
+          - /url: playlist?list=RDCLAK5uy_mQebvQZ4VbMJGD4BhZIlffqj86YeKkWkg
+        - text: Milton Nascimento, Antonio Carlos Jobim, Maria Bethânia, Marisa Monte
+      - listitem:
+        - link "Reproduzir Piano solo tranquilo Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_lbcexX19-ShfMgzXpxayVFh_9l4Dml-kg
+          - button "Reproduzir Piano solo tranquilo"
+          - button "Menu de ações"
+        - link "Piano solo tranquilo":
+          - /url: playlist?list=RDCLAK5uy_lbcexX19-ShfMgzXpxayVFh_9l4Dml-kg
+        - text: Everfield, avery ashby, Passa Porto, Aaron Nicks
+      - listitem:
+        - link "Reproduzir Música clássica para dormir Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_k83Q0BJ_yGLX2nTNKxOXb3BP3Pb7uMIN0
+          - button "Reproduzir Música clássica para dormir"
+          - button "Menu de ações"
+        - link "Música clássica para dormir":
+          - /url: playlist?list=RDCLAK5uy_k83Q0BJ_yGLX2nTNKxOXb3BP3Pb7uMIN0
+        - text: Gabríel Ólafs, Chad Lawson, Jan Sebastian Bach
+      - listitem:
+        - link "Reproduzir sleep Menu de ações":
+          - /url: playlist?list=RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s
+          - button "Reproduzir sleep"
+          - button "Menu de ações"
+        - link "sleep":
+          - /url: playlist?list=RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s
+        - text: Nils Frahm, Hammock, Aika Muro, Kaitu Shinonome
+      - listitem:
+        - link "O mar vai te fazer sonhar":
+          - /url: playlist?list=RDCLAK5uy_ma_ODYOCz1SAA-VLTd57GwSFUiPJmcerg
+        - link "O mar vai te fazer sonhar":
+          - /url: playlist?list=RDCLAK5uy_ma_ODYOCz1SAA-VLTd57GwSFUiPJmcerg
+        - text: Deep Sleep, Beach Sounds 2016, Outside Broadcast Recordings, Bento Gil
+      - listitem:
+        - link "Meditação do sono":
+          - /url: playlist?list=RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ
+        - link "Meditação do sono":
+          - /url: playlist?list=RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ
+        - text: Deep Sleep, Lóa Veturlíf, And Still The Sea, Halowind
+      - listitem:
+        - link "Vento e chuva":
+          - /url: playlist?list=RDCLAK5uy_kGcITlIUh14Xy7FgqGiLtEJtKoDax4TkI
+        - link "Vento e chuva":
+          - /url: playlist?list=RDCLAK5uy_kGcITlIUh14Xy7FgqGiLtEJtKoDax4TkI
+        - text: Rain Sounds, Deep Sleep, Outside Broadcast Recordings, Rain And Wind Sounds
+    - heading "De quais artistas você gosta?" [level=2]
+    - text: Criaremos uma experiência personalizada para você
+    - button "Vamos lá"
+    - heading "Escolha a dedo" [level=2]
+    - button "Reproduzir tudo": Tocar tudo
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Até Quando":
+          - /url: watch?v=W40W7L1fhUM&list=RDAMVMW40W7L1fhUM
+        - link "Natanzinho Lima":
+          - /url: channel/UCJqd5Ejxi_fPcttEQ-E7hFw
+        - text: ","
+        - link "Ronaldinho Gaúcho":
+          - /url: channel/UCAgKpqDssjXDKE8XHWxKF_A
+        - text: e
+        - link "Tu Musica":
+          - /url: channel/UC2xG15qVGVmuKW3gjD6wuCQ
+        - text: • Tocou 33 mi vezes •
+        - link "Até Quando":
+          - /url: browse/MPREb_hwdXetzcCUV
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Peão Todo Tatuado":
+          - /url: watch?v=9eWo9z6zUi0&list=RDAMVM9eWo9z6zUi0
+        - link "Jeninho":
+          - /url: channel/UC9-9vwb1adgdq2VlZfXVeGw
+        - text: e
+        - link "Mariana Fagundes":
+          - /url: channel/UCAjbRmvBl2crHFdCw8UZY6Q
+        - text: • Tocou 227 mi vezes •
+        - link "Peão Todo Tatuado":
+          - /url: browse/MPREb_yGWbankH2LK
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Cuida do Pet (part. Mc Negão Original, DU'L e Dj Aladin GDB)":
+          - /url: watch?v=nNHVTuST8eA&list=RDAMVMnNHVTuST8eA
+        - link "Oldilla":
+          - /url: channel/UCuq0YXAw6uyBTzZ304xC7jg
+        - text: ","
+        - link "Mc Iguinho Ct":
+          - /url: channel/UCFmtghpR_QCYd3tWAzWhOZQ
+        - text: ","
+        - link "MC Willian":
+          - /url: channel/UCpGZ93aYxJH3hxIpe00Yu4A
+        - text: e
+        - link "Aaron Modesto":
+          - /url: channel/UCAkUdG6M3gCi0SC87c0lU4g
+        - text: • Tocou 164 mi vezes •
+        - link "Cuida do Pet":
+          - /url: browse/MPREb_2z3Ci0accGq
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Geme Baixo (part. DJ João Pereira, Galdino e Honaiser)":
+          - /url: watch?v=IoW1YoD1Jio&list=RDAMVMIoW1YoD1Jio
+        - link "MC Jvila":
+          - /url: channel/UCGWmpjdx-geQJATDvn-pimQ
+        - text: ","
+        - link "Menor MC":
+          - /url: channel/UChFSTXEm-6nw7ExlsN01BSQ
+        - text: ","
+        - link "DJ Dael":
+          - /url: channel/UCUV-AjH5B3kL_QFrJ4XqimQ
+        - text: e
+        - link "G.A":
+          - /url: channel/UCuhMDcwT5lVE4J9t1IeoFUw
+        - text: • Tocou 6,5 mi vezes •
+        - link "Geme Baixo":
+          - /url: browse/MPREb_92skyjj1zG4
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Oi, Tudo Bem? (Ao Vivo)":
+          - /url: watch?v=7-9-KbrpH5Y&list=RDAMVM7-9-KbrpH5Y
+        - link "Zé Neto & Cristiano":
+          - /url: channel/UCm6Kk_E9qUcPEEAiwsOzzXQ
+        - text: e
+        - link "Cristiano":
+          - /url: channel/UCh_oQZUhQylUm9PVYzWMZuw
+        - text: • Tocou 82 mi vezes •
+        - link "Vocês & Deus, Vol. 1 (Ao Vivo no Rio de Janeiro)":
+          - /url: browse/MPREb_aCNT2C1W4Ew
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "MONTAGEM DELÍRIO (Super Slowed)":
+          - /url: watch?v=65f9M1Si5sM&list=RDAMVM65f9M1Si5sM
+        - link "ZXVREN":
+          - /url: channel/UCAyQRSDAb0C4wPAGm540cQA
+        - text: • Tocou 34 mi vezes •
+        - link "MONTAGEM DELÍRIO":
+          - /url: browse/MPREb_imeJWgKDP7g
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Flash (Minha Mente) 💠":
+          - /url: watch?v=Hf9BlxTbV30&list=RDAMVMHf9BlxTbV30
+        - link "Hugo & Guilherme":
+          - /url: channel/UC86xOhUitK56NVSH1u-eldg
+        - text: e
+        - link "Zé Vaqueiro":
+          - /url: channel/UCwakabz1Q6ZThlmsLUWKPvg
+        - text: • Tocou 35 mi vezes •
+        - link "Flash (Minha Mente) 💠":
+          - /url: browse/MPREb_KRCZhudMkxk
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Carnívoro":
+          - /url: watch?v=7_cLuhd7BPo&list=RDAMVM7_cLuhd7BPo
+        - link "Mc Jacaré":
+          - /url: channel/UCAh2ywh0FAGXyWElhG6U1pQ
+        - text: ","
+        - link "Mc Lele JP":
+          - /url: channel/UC8KRgfQSHjW40E0Y3DUKvYA
+        - text: ","
+        - link "MC Negão Original":
+          - /url: channel/UCPjmYdGF09vjSusqClNuF-A
+        - text: e
+        - link "DJ Japa NK":
+          - /url: channel/UC_O348PVKZ9rx_O5qRWgVmQ
+        - text: • Tocou 258 mi vezes •
+        - link "Carnívoro":
+          - /url: browse/MPREb_NAUjm2EpukF
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Mega Hair (Ao Vivo)":
+          - /url: watch?v=ppAibCP87Ho&list=RDAMVMppAibCP87Ho
+        - link "Netto Brito":
+          - /url: channel/UCoJNuHofAOaTKHY5O8VE64A
+        - text: e
+        - link "Luan Pereira":
+          - /url: channel/UCt_NeWd6FkCgK0gGrp4B3UQ
+        - text: • Tocou 48 mi vezes •
+        - link "Mega Hair (Ao Vivo)":
+          - /url: browse/MPREb_GcBlaRspAUm
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Pós (Ao Vivo)":
+          - /url: watch?v=sRzNqH_IEv4&list=RDAMVMsRzNqH_IEv4
+        - link "Felipe e Rodrigo":
+          - /url: channel/UCMoYu0mVhcdW5IyZoWoYNBQ
+        - text: • Tocou 60 mi vezes •
+        - link "Pós (Ao Vivo)":
+          - /url: browse/MPREb_3MjXVCFrjm4
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Ritmo Era Uma Vez":
+          - /url: watch?v=0S5_hHVRfVU&list=RDAMVM0S5_hHVRfVU
+        - link "MC VN Cria":
+          - /url: channel/UCpVaBSMB3Zzb23CAzd_MbKQ
+        - text: ","
+        - link "MC BF":
+          - /url: channel/UCrG1hKd2vSfSm8nF_xQMntw
+        - text: ","
+        - link "DJ Oreia 074":
+          - /url: channel/UCfgBoph_Y6OMaQ3XFfMUViQ
+        - text: e
+        - link "Fortuna Music Group":
+          - /url: channel/UCYBBChYf7cynJHFoZSleWeQ
+        - text: • Tocou 10 mi vezes •
+        - link "Ritmo Era Uma Vez":
+          - /url: browse/MPREb_2UUny4IVzi8
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Ta Pedindo Toma":
+          - /url: watch?v=PPomNSCT-Hc&list=RDAMVMPPomNSCT-Hc
+        - link "MC Leozinho ZS":
+          - /url: channel/UCXFN7z6G64pblSpXKhAd_CA
+        - text: ","
+        - link "MC Murilo MT":
+          - /url: channel/UCsBAzU8RtOG-XSyZFRVP_Tg
+        - text: ","
+        - link "Mc DR":
+          - /url: channel/UCPyg7WbjoV93mswMQ-aXGSw
+        - text: e
+        - link "DJ JHOW BEATS":
+          - /url: channel/UCkTpJ7zHRBVSkfF1LEsmD_g
+        - text: • Tocou 70 mi vezes •
+        - link "Ta Pedindo Toma":
+          - /url: browse/MPREb_k6tjJohNNp2
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Runaway":
+          - /url: watch?v=BRpS93I8_Jk&list=RDAMVMBRpS93I8_Jk
+        - link "AURORA":
+          - /url: channel/UC4G-AJa7kn8oumI6TT2WXYw
+        - text: • Tocou 1,2 bi vezes •
+        - link "Running With The Wolves (EP)":
+          - /url: browse/MPREb_8uimRxKr23y
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "O mundo é nosso":
+          - /url: watch?v=fEq_uBZw_EA&list=RDAMVMfEq_uBZw_EA
+        - link "Duduzinho":
+          - /url: channel/UC6hokYOvpJmY2usYpc5eoQg
+        - text: • Tocou 36 mi vezes •
+        - link "O Mundo É Nosso":
+          - /url: browse/MPREb_j5QCnFnyD4M
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Vai Valer a Pena o Processo":
+          - /url: watch?v=vGui2GK2Bmw&list=RDAMVMvGui2GK2Bmw
+        - link "Zion Thariel":
+          - /url: channel/UC3Q7H_TQtDf7DHnp473Vv8Q
+        - text: • Tocou 5,5 mi vezes •
+        - link "Vai Valer a Pena o Processo":
+          - /url: browse/MPREb_4soWSliJ6pm
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Gnarly":
+          - /url: watch?v=qL0MOut0tXU&list=RDAMVMqL0MOut0tXU
+        - link "KATSEYE":
+          - /url: channel/UCX9kfYB9t0tnd6DYUC2iuKg
+        - text: • Tocou 768 mi vezes •
+        - link "Gnarly":
+          - /url: browse/MPREb_QoDCSL8z12N
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Milk Shake":
+          - /url: watch?v=H43esmzj6Eg&list=RDAMVMH43esmzj6Eg
+        - link "VOID":
+          - /url: channel/UCv5NAsu6hcpltd-6VE4Szdg
+        - text: e
+        - link "Emilly Vick":
+          - /url: channel/UC8_edR1f69s2R0O3JkmY1yQ
+        - text: • Tocou 10 mi vezes •
+        - link "Milk Shake":
+          - /url: browse/MPREb_ZYkybyiruqr
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Minha Preferida":
+          - /url: watch?v=xMwxRNC9gD0&list=RDAMVMxMwxRNC9gD0
+        - link "Mc Gabzin":
+          - /url: channel/UCEiXvDnRXlBKblNeoX-ftmg
+        - text: e
+        - link "DJ Marcus Vinicius":
+          - /url: channel/UCMJhQ5rLJbAdXM52eVlJkNQ
+        - text: • Tocou 38 mi vezes •
+        - link "Minha Preferida":
+          - /url: browse/MPREb_QbvVzooWuvr
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "Quarta Cadeira (Ao Vivo) (part. Jorge & Mateus e Mateus)":
+          - /url: watch?v=Num1Lr8cryE&list=RDAMVMNum1Lr8cryE
+        - link "Matheus & Kauan":
+          - /url: channel/UClE44UxoPXDa8bqWnqP71tg
+        - text: • Tocou 908 mi vezes •
+        - link "Tem Moda Pra Tudo (Ao Vivo)":
+          - /url: browse/MPREb_qQR9RuykGNc
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+      - listitem:
+        - link "JETSKI":
+          - /url: watch?v=Sbtd0rlORf8&list=RDAMVMSbtd0rlORf8
+        - link "PEDRO SAMPAIO":
+          - /url: channel/UCrtlcOLqu8ARd0VXKz_TA3Q
+        - text: ","
+        - link "Melody":
+          - /url: channel/UC76tSFqJJLg6Sh4DWyfrTjw
+        - text: e
+        - link "MC Meno K":
+          - /url: channel/UCj1Ja_ZGKK2bN495vMrruiQ
+        - text: • Tocou 317 mi vezes •
+        - link "JETSKI":
+          - /url: browse/MPREb_UPyKxKq0OvF
+        - button "Marcar como \"Gostei\""
+        - button "Marcar como \"Não gostei\""
+        - button "Menu de ações"
+    - heading "Playlists da comunidade em alta" [level=2]
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Musika Brasil":
+          - /url: playlist?list=PL7U9M7TbUtgE1k5RY2HO6JGfZQof204xJ
+          - link "Musika Brasil"
+        - link "LOUVORES - OS 50 MAIS OUVIDOS 2026 🔥 Atualizado":
+          - /url: playlist?list=PL7U9M7TbUtgE1k5RY2HO6JGfZQof204xJ
+        - link "Musika Brasil":
+          - /url: channel/UCw1RqqNO4Lrv7x7uq27NWUQ
+        - text: • 1 mi de visualizações
+      - listitem:
+        - link "Casa de Rodapé 🐱":
+          - /url: playlist?list=PLGRY1G015gD0Wn9cQuJqHwyrikKyPb7dZ
+          - link "Casa de Rodapé 🐱"
+        - link "2000's":
+          - /url: playlist?list=PLGRY1G015gD0Wn9cQuJqHwyrikKyPb7dZ
+        - link "Casa de Rodapé 🐱":
+          - /url: channel/UCFy4vOfAjMmGqly5JNx_y4w
+        - text: • 16 mi de visualizações
+      - listitem:
+        - link "Girassol Simões":
+          - /url: playlist?list=PLf2BDPhkvETQMlgJ0aqRcNwHjVDk43ui1
+          - link "Girassol Simões"
+        - link "MPB":
+          - /url: playlist?list=PLf2BDPhkvETQMlgJ0aqRcNwHjVDk43ui1
+        - link "Girassol Simões":
+          - /url: channel/UCff8wsUIycZPrpb4OtHL8SA
+        - text: • 2,2 mi de visualizações
+      - listitem:
+        - link "Leonardo Martins Dos Santos":
+          - /url: playlist?list=PLNYhPY7m84cvguXIoAQTA0Mu7hGS4L0XQ
+          - link "Leonardo Martins Dos Santos"
+        - link "Acústico":
+          - /url: playlist?list=PLNYhPY7m84cvguXIoAQTA0Mu7hGS4L0XQ
+        - link "Leonardo Martins Dos Santos":
+          - /url: channel/UCp3ATs7y1SW6LPaP8hXN0eg
+        - text: • 703 mil visualizações
+      - listitem:
+        - link "André Paulino":
+          - /url: playlist?list=PLGaNJfJp-2bxzJMZEASbK6vIstcYhVXSt
+          - link "André Paulino"
+        - link "Bregas antigas - retrô":
+          - /url: playlist?list=PLGaNJfJp-2bxzJMZEASbK6vIstcYhVXSt
+        - link "André Paulino":
+          - /url: channel/UCwF8sLX-1Yg3BOuIs0kNhfw
+        - text: • 6 mi de visualizações
+      - listitem:
+        - link "Lucas Viana":
+          - /url: playlist?list=PL86YpATXMaO3gnrhUS1BWZofwhL436-4X
+          - link "Lucas Viana"
+        - link "Rap":
+          - /url: playlist?list=PL86YpATXMaO3gnrhUS1BWZofwhL436-4X
+        - link "Lucas Viana":
+          - /url: channel/UCIvk08ZKjXpPBqKYBLU2QmQ
+        - text: • 8,1 mi de visualizações
+      - listitem:
+        - link "luciano alves":
+          - /url: playlist?list=PLCZyOftNbgXURLUFmev8hzKr6R5b2ZOtb
+          - link "luciano alves"
+        - link "Pagodeiro das antigas":
+          - /url: playlist?list=PLCZyOftNbgXURLUFmev8hzKr6R5b2ZOtb
+        - link "luciano alves":
+          - /url: channel/UCSWCqdEkswtiRxDkbMpoGxw
+        - text: • 25 mi de visualizações
+      - listitem:
+        - link "mroni_":
+          - /url: playlist?list=PLf20e6abcmZcIEXin0yL81YA8erHqDaSu
+          - link "mroni_"
+        - link "Furacão 2000 - as melhores 😎":
+          - /url: playlist?list=PLf20e6abcmZcIEXin0yL81YA8erHqDaSu
+        - link "mroni_":
+          - /url: channel/UC6SUmdoxRjEweo6hV7cdJ6g
+        - text: • 6,2 mi de visualizações
+      - listitem:
+        - link "DIMARINHO":
+          - /url: playlist?list=PLHL9e6W2-N62kqE6yXb7IZ-VMtP_IdVCP
+          - link "DIMARINHO"
+        - link "FESTA REBECA":
+          - /url: playlist?list=PLHL9e6W2-N62kqE6yXb7IZ-VMtP_IdVCP
+        - link "DIMARINHO":
+          - /url: channel/UCUm8Y-gS9peOAiMnyLBb5Zg
+        - text: • 2,5 mi de visualizações
+      - listitem:
+        - link "Willy Silva":
+          - /url: playlist?list=PLwLajwyp9p93lYYDMMxzAO6J5KeGnsHze
+          - link "Willy Silva"
+        - link "boa toma um":
+          - /url: playlist?list=PLwLajwyp9p93lYYDMMxzAO6J5KeGnsHze
+        - link "Willy Silva":
+          - /url: channel/UC02p-_qVcP5FW2VQn1aILZg
+        - text: • 372 mil visualizações
+    - heading "Perfeitas para o fim de semana" [level=2]
+    - button "Anterior" [disabled]
+    - button "Avançar"
+    - list:
+      - listitem:
+        - link "Hits infalíveis do pop nacional":
+          - /url: playlist?list=RDCLAK5uy_mzYSsYfdCm5vN0hl-VFLn3qllz2G2kjzY
+        - link "Hits infalíveis do pop nacional":
+          - /url: playlist?list=RDCLAK5uy_mzYSsYfdCm5vN0hl-VFLn3qllz2G2kjzY
+        - text: Skank, Lulu Santos, Cidade Negra, Titãs
+      - listitem:
+        - link "Topnejo":
+          - /url: playlist?list=RDCLAK5uy_k5faEHND0iXJljeASESqJ3A8UtRr2FL00
+        - link "Topnejo":
+          - /url: playlist?list=RDCLAK5uy_k5faEHND0iXJljeASESqJ3A8UtRr2FL00
+        - text: Panda, MJ Records, Ícaro E Gilmar, Gusttavo Lima
+      - listitem:
+        - link "Hits Gospel":
+          - /url: playlist?list=RDCLAK5uy_nOriQwB32kkwqUE_8AmSvO0koFPVvbaOo
+        - link "Hits Gospel":
+          - /url: playlist?list=RDCLAK5uy_nOriQwB32kkwqUE_8AmSvO0koFPVvbaOo
+        - text: Isadora Pompeo, Julliany Souza, Vinicius Cruz
+      - listitem:
+        - link "Hits Pagode":
+          - /url: playlist?list=RDCLAK5uy_l3s4Q5jYhWRQvtT6U1lFkX2ruLBLk06Ws
+        - link "Hits Pagode":
+          - /url: playlist?list=RDCLAK5uy_l3s4Q5jYhWRQvtT6U1lFkX2ruLBLk06Ws
+        - text: Ferrugem, LUDMILLA, Sorriso Maroto, Grupo Menos É Mais
+      - listitem:
+        - link "Hits do sertanejo":
+          - /url: playlist?list=RDCLAK5uy_kwJw5GFjrGKcu12Ji1_yAHcTBj3DkHNaI
+        - link "Hits do sertanejo":
+          - /url: playlist?list=RDCLAK5uy_kwJw5GFjrGKcu12Ji1_yAHcTBj3DkHNaI
+        - text: Henrique & Juliano, Simone Mendes, Matheus & Kauan, Guilherme & Benuto
+      - listitem:
+        - link "Modas de viola":
+          - /url: playlist?list=RDCLAK5uy_nbh5oG5wfU0hOVQ55GaDcUEwJX1-lHuAw
+        - link "Modas de viola":
+          - /url: playlist?list=RDCLAK5uy_nbh5oG5wfU0hOVQ55GaDcUEwJX1-lHuAw
+        - text: Chitãozinho & Xororó, Mayck & Lyan, Trio Parada Dura, Divino & Donizete
+      - listitem:
+        - link "Hits do Brega":
+          - /url: playlist?list=RDCLAK5uy_ke-UzSJqSULaCdMGUkhlXZ2pE8DczrA9w
+        - link "Hits do Brega":
+          - /url: playlist?list=RDCLAK5uy_ke-UzSJqSULaCdMGUkhlXZ2pE8DczrA9w
+        - text: Pablo, Raphaela Santos, Priscila Senna, Manu Bahtidão
+      - listitem:
+        - link "Resenha Pagode":
+          - /url: playlist?list=RDCLAK5uy_l9Qw11eDkPAlLBB1xlZdxG-u0sXffJhy0
+        - link "Resenha Pagode":
+          - /url: playlist?list=RDCLAK5uy_l9Qw11eDkPAlLBB1xlZdxG-u0sXffJhy0
+        - text: Ferrugem, Grupo Menos É Mais, Sorriso Maroto, Vitinho
+      - listitem:
+        - link "Hits do Forró":
+          - /url: playlist?list=RDCLAK5uy_nUo4YvuYR7fESVGgLCkwFX6rbnuy8lH34
+        - link "Hits do Forró":
+          - /url: playlist?list=RDCLAK5uy_nUo4YvuYR7fESVGgLCkwFX6rbnuy8lH34
+        - text: Natanzinho Lima, Felipe Amorim, Wesley Safadão, Zé Vaqueiro
+      - listitem:
+        - link "Funk em Alta":
+          - /url: playlist?list=RDCLAK5uy_mrFf8MOdXpsgjmDPmy9UrarANZUJv4IOw
+        - link "Funk em Alta":
+          - /url: playlist?list=RDCLAK5uy_mrFf8MOdXpsgjmDPmy9UrarANZUJv4IOw
+        - text: MC MENO K, MC Ryan SP, MC Lele JP, MC IG

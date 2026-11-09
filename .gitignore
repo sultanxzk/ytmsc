@@ -1,0 +1,16 @@
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vscode/settings.json
+# dumps/evidências pesadas da investigação
+evidence-*.json
+evidence*.json
+*.dom.html
+recon-dbg.png
+55aa6606.html
+a7aa6623.html
+reference/

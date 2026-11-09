@@ -1,0 +1,269 @@
+- document:
+  - complementary:
+    - img
+    - text: YouTube Music
+    - superscript: Premium
+    - text: YouTube Music
+    - button "Recolher menu"
+    - navigation:
+      - button "Início"
+      - button "Explorar"
+      - button "Biblioteca"
+    - button "Fazer login"
+    - paragraph: Sign in to create & share playlists, get personalized recommendations, and more.
+    - text: Catálogo via YouTube Music
+  - main:
+    - textbox "Pesquisar músicas, álbuns e artistas":
+      - /placeholder: Pesquise músicas, álbuns, artistas e podcasts  ( / )
+    - button "Transmitir para cast"
+    - button "Mais opções"
+    - button "Fazer login"
+    - button "Podcasts"
+    - button "Para ouvir no trânsito"
+    - button "Romance"
+    - button "Energia"
+    - button "Para treinar"
+    - button "Relax"
+    - button "Para dormir"
+    - button "Positividade"
+    - button "Festa"
+    - button "Triste"
+    - button "Foco"
+    - button "Ouvir agora"
+    - heading "Escolha a dedo" [level=2]
+    - button "Tocar tudo"
+    - text: Patricinha Robson Abreu • Patricinha
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Carnívoro Mc Jacaré, Mc Lele JP, MC Negão Original, DJ Japa NK • Carnívoro
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Cadeira Cativa (Ao Vivo) Zé Neto & Cristiano, Cristiano • Vocês & Deus, Vol. 1 (Ao Vivo no Rio de Janeiro)
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Pós (Ao Vivo) Felipe e Rodrigo • Pós (Ao Vivo)
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Até Quando Natanzinho Lima, Ronaldinho Gaúcho, Tu Musica • Até Quando
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Gnarly KATSEYE • Gnarly
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Minha Preferida Mc Gabzin, DJ Marcus Vinicius • Minha Preferida
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Mega Hair (Ao Vivo) Netto Brito, Luan Pereira • Mega Hair (Ao Vivo)
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Runaway AURORA • Running With The Wolves (EP)
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: JETSKI PEDRO SAMPAIO, Melody, MC Meno K • JETSKI
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Agudo Mágico 3 (Versão Light) MC K.K, DJ TG Beats, MC Lipivox, Dj Aurélio • Agudo Mágico 3 (Versão Light)
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - text: Ta Pedindo Toma MC Leozinho ZS, MC Murilo MT, Mc DR, DJ JHOW BEATS • Ta Pedindo Toma
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - heading "Ouvir novamente" [level=2]
+    - button "Ver tudo"
+    - button "Anterior"
+    - button "Próximo"
+    - img "Milk Shake"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Milk Shake
+    - paragraph: VOID, Emilly Vick • Milk Shake
+    - img "MONTAGEM DELÍRIO (Super Slowed)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: MONTAGEM DELÍRIO (Super Slowed)
+    - paragraph: ZXVREN • MONTAGEM DELÍRIO
+    - img "Peão Todo Tatuado"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Peão Todo Tatuado
+    - paragraph: Jeninho, Mariana Fagundes • Peão Todo Tatuado
+    - img "Cuida do Pet (feat. Mc Negão Original, DU'L & Dj Aladin GDB)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Cuida do Pet (feat. Mc Negão Original, DU'L & Dj Aladin GDB)
+    - paragraph: Oldilla, Mc Iguinho Ct, MC Willian, Aaron Modesto • Cuida do Pet
+    - img "Patricinha"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Patricinha
+    - paragraph: Robson Abreu • Patricinha
+    - img "Até Quando"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Até Quando
+    - paragraph: Natanzinho Lima, Ronaldinho Gaúcho, Tu Musica • Até Quando
+    - img "Runaway"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Runaway
+    - paragraph: AURORA • Running With The Wolves (EP)
+    - img "Carnívoro"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Carnívoro
+    - paragraph: Mc Jacaré, Mc Lele JP, MC Negão Original, DJ Japa NK • Carnívoro
+    - img "Gnarly"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Gnarly
+    - paragraph: KATSEYE • Gnarly
+    - img "JETSKI"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: JETSKI
+    - paragraph: PEDRO SAMPAIO, Melody, MC Meno K • JETSKI
+    - img "Cadeira Cativa (Ao Vivo)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Cadeira Cativa (Ao Vivo)
+    - paragraph: Zé Neto & Cristiano, Cristiano • Vocês & Deus, Vol. 1 (Ao Vivo no Rio de Janeiro)
+    - img "Minha Preferida"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Minha Preferida
+    - paragraph: Mc Gabzin, DJ Marcus Vinicius • Minha Preferida
+    - heading "Músicas em alta" [level=2]
+    - button "Ver tudo"
+    - button "Anterior"
+    - button "Próximo"
+    - img "Milk Shake"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Milk Shake
+    - paragraph: VOID, Emilly Vick • Milk Shake
+    - img "MONTAGEM DELÍRIO (Super Slowed)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: MONTAGEM DELÍRIO (Super Slowed)
+    - paragraph: ZXVREN • MONTAGEM DELÍRIO
+    - img "Peão Todo Tatuado"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Peão Todo Tatuado
+    - paragraph: Jeninho, Mariana Fagundes • Peão Todo Tatuado
+    - img "Cuida do Pet (feat. Mc Negão Original, DU'L & Dj Aladin GDB)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Cuida do Pet (feat. Mc Negão Original, DU'L & Dj Aladin GDB)
+    - paragraph: Oldilla, Mc Iguinho Ct, MC Willian, Aaron Modesto • Cuida do Pet
+    - img "Patricinha"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Patricinha
+    - paragraph: Robson Abreu • Patricinha
+    - img "Até Quando"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Até Quando
+    - paragraph: Natanzinho Lima, Ronaldinho Gaúcho, Tu Musica • Até Quando
+    - img "Runaway"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Runaway
+    - paragraph: AURORA • Running With The Wolves (EP)
+    - img "Carnívoro"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Carnívoro
+    - paragraph: Mc Jacaré, Mc Lele JP, MC Negão Original, DJ Japa NK • Carnívoro
+    - img "Gnarly"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Gnarly
+    - paragraph: KATSEYE • Gnarly
+    - img "JETSKI"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: JETSKI
+    - paragraph: PEDRO SAMPAIO, Melody, MC Meno K • JETSKI
+    - img "Cadeira Cativa (Ao Vivo)"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Cadeira Cativa (Ao Vivo)
+    - paragraph: Zé Neto & Cristiano, Cristiano • Vocês & Deus, Vol. 1 (Ao Vivo no Rio de Janeiro)
+    - img "Minha Preferida"
+    - button "Curtir"
+    - button "Não gostei"
+    - button "Mais opções"
+    - paragraph: Minha Preferida
+    - paragraph: Mc Gabzin, DJ Marcus Vinicius • Minha Preferida
+    - heading "Álbuns recomendados" [level=2]
+    - button "Ver tudo"
+    - button "Anterior"
+    - button "Próximo"
+    - img "2000's"
+    - paragraph: 2000's
+    - paragraph: Álbum •
+    - img "Acústico"
+    - paragraph: Acústico
+    - paragraph: Álbum •
+    - img "LOUVORES - OS 50 MAIS OUVIDOS 2026 🔥 Atualizado"
+    - paragraph: LOUVORES - OS 50 MAIS OUVIDOS 2026 🔥 Atualizado
+    - paragraph: Álbum •
+    - img "boa toma um"
+    - paragraph: boa toma um
+    - paragraph: Álbum •
+    - img "MPB"
+    - paragraph: MPB
+    - paragraph: Álbum •
+    - img "FESTA REBECA"
+    - paragraph: FESTA REBECA
+    - paragraph: Álbum •
+    - img "Rap"
+    - paragraph: Rap
+    - paragraph: Álbum •
+    - img "só funk"
+    - paragraph: só funk
+    - paragraph: Álbum •
+    - img "Forró das Antigas"
+    - paragraph: Forró das Antigas
+    - paragraph: Álbum •
+    - 'img "Lançamentos 2026 da Semana: Top 100 Sertanejo 2026 - Sertanejo Universitario, Romantico, Funknejo etc."'
+    - paragraph: "Lançamentos 2026 da Semana: Top 100 Sertanejo 2026 - Sertanejo Universitario, Romantico, Funknejo etc."
+    - paragraph: Álbum •
+  - text: Selecione uma música para começar — YouTube Music
