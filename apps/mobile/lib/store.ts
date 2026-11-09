@@ -1,6 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Track } from './api';
+import { getToken, syncGet, syncPut } from './auth.server';
 
+// Store local-first + espelho no servidor quando logado.
+// Sem login, continua tudo em AsyncStorage (guest mode).
 const K = {
   likes: '@yt_likes',
   dislikes: '@yt_dislikes',
@@ -23,15 +26,33 @@ async function setJSON(key: string, value: unknown) {
     await AsyncStorage.setItem(key, JSON.stringify(value));
   } catch {}
 }
+async function remoteOr<T>(store: string, local: () => Promise<T>, fallback: T): Promise<T> {
+  const token = await getToken().catch(() => null);
+  if (!token) return local();
+  try {
+    const remote = await syncGet(store);
+    if (remote != null) return remote;
+    const l = await local();
+    await syncPut(store, l).catch(() => {});
+    return l;
+  } catch {
+    return local();
+  }
+}
+async function dualWrite(store: string, key: string, value: unknown) {
+  await setJSON(key, value);
+  const token = await getToken().catch(() => null);
+  if (token) await syncPut(store, value).catch(() => {});
+}
 
 export async function getLikes(): Promise<string[]> {
-  return getJSON<string[]>(K.likes, []);
+  return remoteOr<string[]>('likes', () => getJSON<string[]>(K.likes, []), []);
 }
 export async function setLikes(ids: string[]) {
-  await setJSON(K.likes, ids);
+  await dualWrite('likes', K.likes, ids);
 }
 export async function getDislikes(): Promise<string[]> {
-  return getJSON<string[]>(K.dislikes, []);
+  return getJSON(K.dislikes, []);
 }
 export async function setDislikes(ids: string[]) {
   await setJSON(K.dislikes, ids);
@@ -42,7 +63,16 @@ export interface HistoryEntry {
   playedAt: number;
 }
 export async function getHistory(limit = 100): Promise<HistoryEntry[]> {
-  return getJSON<HistoryEntry[]>(K.history, []).then((h) => h.slice(0, limit));
+  const local = await getJSON<HistoryEntry[]>(K.history, []);
+  // remoto é [{videoId, playedAt}] — normaliza para {track, playedAt} quando possível
+  const remote = await syncGet('history').catch(() => null);
+  if (Array.isArray(remote) && remote.length) {
+    const mapped: HistoryEntry[] = remote
+      .map((e: any) => ({ track: e.track || e, playedAt: e.playedAt || Date.now() }))
+      .filter((e: any) => e.track?.videoId);
+    if (mapped.length) return mapped.slice(0, limit);
+  }
+  return local.slice(0, limit);
 }
 export async function addHistory(track: Track) {
   const h = await getJSON<HistoryEntry[]>(K.history, []);
@@ -52,6 +82,8 @@ export async function addHistory(track: Track) {
 }
 export async function clearHistory() {
   await setJSON(K.history, []);
+  const token = await getToken().catch(() => null);
+  if (token) await syncPut('history', []).catch(() => {});
 }
 
 export interface Playlist {
@@ -63,17 +95,17 @@ export interface Playlist {
   updatedAt: number;
 }
 export async function getPlaylists(): Promise<Playlist[]> {
-  return getJSON<Playlist[]>(K.playlists, []);
+  return remoteOr<Playlist[]>('playlists', () => getJSON<Playlist[]>(K.playlists, []), []);
 }
 export async function savePlaylists(pls: Playlist[]) {
-  await setJSON(K.playlists, pls);
+  await dualWrite('playlists', K.playlists, pls);
 }
 
 export async function getLibAlbums(): Promise<string[]> {
-  return getJSON<string[]>(K.albums, []);
+  return remoteOr<string[]>('libraryAlbums', () => getJSON<string[]>(K.albums, []), []);
 }
 export async function setLibAlbums(ids: string[]) {
-  await setJSON(K.albums, ids);
+  await dualWrite('libraryAlbums', K.albums, ids);
 }
 
 export interface Prefs {

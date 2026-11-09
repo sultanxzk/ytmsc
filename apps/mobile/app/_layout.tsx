@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { YTMobileAudioProvider } from '../components/YTMobileAudioProvider';
-import { AuthProvider } from '../lib/auth';
+import { AuthProvider } from '../lib/auth.provider';
 import { LoginModal } from '../components/LoginModal';
 import { ProfileModal } from '../components/ProfileModal';
 import { runOtaCheck } from '../lib/updater';

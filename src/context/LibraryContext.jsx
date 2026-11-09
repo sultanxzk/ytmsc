@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 import { useAuth } from "./AuthContext";
 import { DB } from "../db/database";
 import { useToast } from "./ToastContext";
+import { syncGet, syncPut } from "../api/sync";
 
 const LibraryContext = createContext(null);
 
@@ -158,6 +159,11 @@ export function LibraryProvider({ children }) {
     DB.getLikes(userId).then((ids) => { if (!c) setLikedCount(ids?.length || 0); }).catch(() => {});
     return () => { c = true; };
   }, [userId]);
+
+  // dual-write: toda mudança local também sobe para /api/sync (conta compartilhada)
+  useEffect(() => { if (userId) { syncPut("playlists", playlists).catch(() => {}); } }, [playlists, userId]);
+  useEffect(() => { if (userId) { syncPut("subscriptions", subs).catch(() => {}); } }, [subs, userId]);
+  useEffect(() => { if (userId) { syncPut("libraryAlbums", libAlbums).catch(() => {}); } }, [libAlbums, userId]);
 
   const value = {
     playlists, addPlaylist, renamePlaylist, deletePlaylist, addToPlaylist, refreshPlaylists,

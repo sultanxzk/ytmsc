@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, View, Text, Image, TextInput, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native';
 import { X } from 'lucide-react-native';
-import { useAuth } from '../lib/auth';
+import { useAuth } from '../lib/auth.provider';
 
 export function ProfileModal() {
   const { profileOpen, setProfileOpen, user, updateProfile, changePassword, logout } = useAuth();

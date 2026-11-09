@@ -4,7 +4,7 @@ import { Play, Download, Check, Search } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useAudio } from '../../components/YTMobileAudioProvider';
 import { fetchHome, fmtSec, type Track } from '../../lib/api';
-import { useAuth } from '../../lib/auth';
+import { useAuth } from '../../lib/auth.provider';
 
 const CHIPS = ['Tudo', 'Músicas', 'Playlists', 'Álbuns', 'Artistas', 'Energia', 'Foco', 'Tranquilidade'];
 

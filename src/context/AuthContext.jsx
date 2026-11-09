@@ -1,5 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { DB, migrateLegacyLocalStorage } from "../db/database";
+import { authFetch, logoutFetch, me as remoteMe, setToken } from "../api/sync";
+
+const REMOTE_ENABLED = true;
 
 const AuthContext = createContext(null);
 
@@ -39,10 +42,17 @@ export function AuthProvider({ children }) {
   const lockRef = useRef(false);
 
   // init: migrar legado, carregar sessão
+  // Tenta servidor primeiro (conta compartilhada web ↔ mobile), fallback IndexedDB local
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try { await migrateLegacyLocalStorage(); } catch {}
+      if (REMOTE_ENABLED) {
+        try {
+          const remote = await remoteMe();
+          if (remote && !cancelled) { setUser(remote); setReady(true); return; }
+        } catch {}
+      }
       try {
         const uid = await DB.getSessionUserId();
         if (uid) {
@@ -56,9 +66,9 @@ export function AuthProvider({ children }) {
     return () => { cancelled = true; };
   }, []);
 
-  const persistAndSession = useCallback(async (record) => {
+  const persistAndSession = useCallback(async (record, remoteUser = null) => {
     await DB.saveUser(record);
-    const session = publicSession(record);
+    const session = publicSession(remoteUser || record);
     setUser(session);
     try { await DB.setSessionUserId(record.id); } catch {}
     setAuthOpen(false);
@@ -81,6 +91,30 @@ export function AuthProvider({ children }) {
       if (!password) throw new Error("Informe sua senha.");
       if (password.length < 6) throw new Error("A senha precisa de pelo menos 6 caracteres.");
 
+      // 1) Servidor (conta compartilhada com o app mobile)
+      if (REMOTE_ENABLED) {
+        try {
+          const json = await authFetch("login", { name, email: safeEmail, password });
+          const remote = json?.user;
+          const local = await DB.getUserByEmail(safeEmail).catch(() => null);
+          const record = local ? { ...local, ...remote, email: safeEmail } : {
+            id: remote.id, name: remote.name, email: safeEmail,
+            passwordHash: "remote", passwordSalt: null, photo: remote.photo || null,
+            initials: remote.initials || initialsFor(remote.name), plan: remote.plan || "Premium",
+            provider: remote.provider || "email", createdAt: remote.createdAt || Date.now(),
+          };
+          await DB.saveUser(record);
+          setUser(remote);
+          try { await DB.setSessionUserId(record.id); } catch {}
+          setAuthOpen(false);
+          return remote;
+        } catch (e) {
+          // se o servidor estiver fora, cai para o modo local
+          if (!/HTTP|fetch|Network|500/.test(String(e?.message || ""))) throw e;
+        }
+      }
+
+      // 2) Fallback IndexedDB (legado, só abre no navegador)
       const existing = await DB.getUserByEmail(safeEmail);
       if (existing) {
         if (!existing.passwordHash) {
@@ -119,21 +153,49 @@ export function AuthProvider({ children }) {
   const requestCode = useCallback(async (email) => {
     const safeEmail = String(email || "").trim().toLowerCase();
     if (!isValidEmail(safeEmail)) throw new Error("Insira um e-mail válido.");
+    if (REMOTE_ENABLED) {
+      try {
+        const json = await authFetch("requestCode", { email: safeEmail });
+        setCodeState({ email: safeEmail, code: json.demoCode, expiresAt: Date.now() + 5 * 60 * 1000, attempts: 0, userExists: json.userExists });
+        return json;
+      } catch (e) {
+        if (!/HTTP|fetch|Network|500/.test(String(e?.message || ""))) throw e;
+      }
+    }
     const existing = await DB.getUserByEmail(safeEmail);
     if (!existing) {
-      // anti-enumeração: mensagem genérica, mas gera código mesmo assim
       const code = String(Math.floor(100000 + Math.random() * 900000));
       setCodeState({ email: safeEmail, code, expiresAt: Date.now() + 5 * 60 * 1000, attempts: 0, userExists: false });
       return { demoCode: code, userExists: false };
     }
     const code = String(Math.floor(100000 + Math.random() * 900000));
     setCodeState({ email: safeEmail, code, expiresAt: Date.now() + 5 * 60 * 1000, attempts: 0, userExists: true });
-    // Em produção, o código seria enviado por e-mail. Retornamos para exibição local.
     return { demoCode: code, userExists: true };
   }, []);
 
   const verifyCode = useCallback(async (email, code) => {
     const safeEmail = String(email || "").trim().toLowerCase();
+    if (REMOTE_ENABLED) {
+      try {
+        const json = await authFetch("verifyCode", { email: safeEmail, code: String(code).trim() });
+        const remote = json?.user;
+        const local = await DB.getUserByEmail(safeEmail).catch(() => null);
+        const record = local ? { ...local, ...remote, email: safeEmail } : {
+          id: remote.id, name: remote.name, email: safeEmail,
+          passwordHash: "remote", passwordSalt: null, photo: remote.photo || null,
+          initials: remote.initials || initialsFor(remote.name), plan: remote.plan || "Premium",
+          provider: remote.provider || "email", createdAt: remote.createdAt || Date.now(),
+        };
+        await DB.saveUser(record);
+        setUser(remote);
+        try { await DB.setSessionUserId(record.id); } catch {}
+        setAuthOpen(false);
+        setCodeState(null);
+        return remote;
+      } catch (e) {
+        if (!/HTTP|fetch|Network|500/.test(String(e?.message || ""))) throw e;
+      }
+    }
     const state = codeState;
     if (!state || state.email !== safeEmail) throw new Error("Solicite um código primeiro.");
     if (Date.now() > state.expiresAt) throw new Error("Código expirado — solicite um novo.");
@@ -155,6 +217,26 @@ export function AuthProvider({ children }) {
     if (!googleUser?.email) throw new Error("Não foi possível obter seu e-mail do Google.");
     const safeEmail = String(googleUser.email).trim().toLowerCase();
     if (!isValidEmail(safeEmail)) throw new Error("E-mail do Google inválido.");
+    if (REMOTE_ENABLED) {
+      try {
+        const json = await authFetch("google", { googleUser });
+        const remote = json?.user;
+        const local = await DB.getUserByEmail(safeEmail).catch(() => null);
+        const record = local ? { ...local, ...remote, email: safeEmail } : {
+          id: remote.id, name: remote.name, email: safeEmail,
+          passwordHash: "remote", passwordSalt: null, photo: remote.photo || null,
+          initials: remote.initials || initialsFor(remote.name), plan: remote.plan || "Premium",
+          provider: remote.provider || "email", createdAt: remote.createdAt || Date.now(),
+        };
+        await DB.saveUser(record);
+        setUser(remote);
+        try { await DB.setSessionUserId(record.id); } catch {}
+        setAuthOpen(false);
+        return remote;
+      } catch (e) {
+        if (!/HTTP|fetch|Network|500/.test(String(e?.message || ""))) throw e;
+      }
+    }
     const existing = await DB.getUserByEmail(safeEmail);
     if (existing) {
       // mescla: vincula Google à conta existente sem criar duplicada
@@ -186,6 +268,7 @@ export function AuthProvider({ children }) {
     setUser(null);
     setCodeState(null);
     try { await DB.setSessionUserId(null); } catch {}
+    try { await logoutFetch(); } catch {}
   }, []);
 
   const updateProfile = useCallback(async (patch) => {
