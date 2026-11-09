@@ -4,11 +4,13 @@ import { Play, Download, Check, Search } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useAudio } from '../../components/YTMobileAudioProvider';
 import { fetchHome, fmtSec, type Track } from '../../lib/api';
+import { useAuth } from '../../lib/auth';
 
 const CHIPS = ['Tudo', 'Músicas', 'Playlists', 'Álbuns', 'Artistas', 'Energia', 'Foco', 'Tranquilidade'];
 
 export default function HomeFeed() {
   const router = useRouter();
+  const { user, setAuthOpen, setProfileOpen } = useAuth();
   const {
     playTrack, playTracks, downloadTrackOffline, downloadProgress,
     downloadedTracks, currentTrack, loadingId,
@@ -94,9 +96,21 @@ export default function HomeFeed() {
     >
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingTop: 55, marginBottom: 16 }}>
         <Text style={{ color: '#ffffff', fontSize: 22, fontWeight: '700', letterSpacing: -0.5 }}>YouTube Music</Text>
-        <TouchableOpacity onPress={() => router.push('/search')} style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center' }}>
-          <Search color="#ffffff" size={18} />
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <TouchableOpacity onPress={() => router.push('/search')} style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center' }}>
+            <Search color="#ffffff" size={18} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => (user ? setProfileOpen(true) : setAuthOpen(true))}
+            style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
+          >
+            {user?.photo ? (
+              <Image source={{ uri: user.photo }} style={{ width: 36, height: 36 }} />
+            ) : (
+              <Text style={{ color: '#fff', fontSize: 14, fontWeight: '700' }}>{user?.initials || 'U'}</Text>
+            )}
+          </TouchableOpacity>
+        </View>
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 16, marginBottom: 24, maxHeight: 38 }}>
