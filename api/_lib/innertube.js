@@ -35,7 +35,7 @@ export async function getInnertube() {
   if (_promise) return _promise;
   patchParserWarn();
   _promise = Innertube.create({
-    client_type: "WEB_REMIX",
+    client_type: "ANDROID",
     cache: new MemoryCache(),
     retrieve_player: false,
   })
