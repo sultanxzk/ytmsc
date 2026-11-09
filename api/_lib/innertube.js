@@ -16,9 +16,24 @@ export class MemoryCache {
 let _client = null;
 let _promise = null;
 
+// Silencia o warning TextBadge not found! — o parser JIT gera a classe na hora,
+// mas a function não deve falhar por isso.
+const _origWarn = console.warn;
+let _warnPatched = false;
+function patchParserWarn() {
+  if (_warnPatched) return;
+  _warnPatched = true;
+  console.warn = (...args) => {
+    const msg = String(args[0] || "");
+    if (msg.includes("TextBadge not found") || msg.includes("[YOUTUBEJS][Parser]")) return;
+    _origWarn(...args);
+  };
+}
+
 export async function getInnertube() {
   if (_client) return _client;
   if (_promise) return _promise;
+  patchParserWarn();
   _promise = Innertube.create({
     client_type: "WEB_REMIX",
     cache: new MemoryCache(),
