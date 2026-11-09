@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "ytmsc",
+    "slug": "ytmsc",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#030303",
+    "splash": {
+      "backgroundColor": "#030303",
+      "resizeMode": "contain",
+      "image": "./assets/splash-image.png"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.sultanxzk.ytmsc" },
+    "android": {
+      "package": "com.sultanxzk.ytmsc",
+      "permissions": ["FOREGROUND_SERVICE", "FOREGROUND_SERVICE_MEDIA_PLAYBACK", "POST_NOTIFICATIONS"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#030303"
+      }
+    },
+    "web": { "bundler": "metro" },
+    "plugins": [
+      "expo-router",
+      ["expo-av", { "backgroundModes": ["audio"] }],
+      ["expo-file-system", { "backgroundModes": ["audio"] }],
+      "expo-updates"
+    ],
+    "scheme": "ytmsc",
+    "runtimeVersion": { "policy": "fingerprint" },
+    "updates": {
+      "url": "https://u.expo.dev/PROJECT_ID",
+      "checkOnLaunch": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
+    "experiments": { "typedRoutes": true }
+  }
+}
