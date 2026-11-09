@@ -1,5 +1,17 @@
 // Shared Innertube helper — cached across serverless invocations in this process.
-import { Innertube, UniversalCache } from "youtubei.js";
+import { Innertube } from "youtubei.js";
+
+// Vercel serverless: /var/task é read-only, então NÃO usar UniversalCache (tenta
+// mkdir em node_modules/.cache e quebra com ENOENT). Cache do cliente em memória basta.
+export class MemoryCache {
+  constructor() { this.m = new Map(); }
+  async get(k) { return this.m.get(k) ?? null; }
+  async set(k, v) { this.m.set(k, v); }
+  async remove(k) { this.m.delete(k); }
+  async clear() { this.m.clear(); }
+  async getAll() { return Object.fromEntries(this.m.entries()); }
+  async has(k) { return this.m.has(k); }
+}
 
 let _client = null;
 let _promise = null;
@@ -9,7 +21,7 @@ export async function getInnertube() {
   if (_promise) return _promise;
   _promise = Innertube.create({
     client_type: "WEB_REMIX",
-    cache: new UniversalCache(true),
+    cache: new MemoryCache(),
     retrieve_player: false,
   })
     .then((c) => ((_client = c), c))
