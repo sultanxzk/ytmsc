@@ -174,7 +174,8 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
     // 1) Verifica offline
     try {
       const offline = await getOfflineTrack(track.videoId);
-      uri = offline?.localUri || track.localUri || track.videoUrl || null;
+      // Never use persisted direct videoUrl; YouTube media URLs expire.
+      uri = offline?.localUri || track.localUri || null;
     } catch {}
 
     // 2) Resolve via API (proxy)
@@ -214,7 +215,10 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
       await sound.setRateAsync(p.rate, true).catch(() => {});
 
       sound.setOnPlaybackStatusUpdate(async (status) => {
-        if (!status.isLoaded) return;
+        if (!status.isLoaded) {
+          if (status.error) console.error('[PLAYER] Playback error:', status.error, { videoId: track.videoId, uri });
+          return;
+        }
         setCurrentTime((status.positionMillis || 0) / 1000);
         if (status.durationMillis) setDuration(status.durationMillis / 1000);
         if (status.isPlaying !== undefined) setIsPlaying(!!status.isPlaying);

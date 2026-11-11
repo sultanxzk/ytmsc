@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import * as Updates from 'expo-updates';
 import { YTMobileAudioProvider } from '../components/YTMobileAudioProvider';
 import { AuthProvider } from '../lib/auth.provider';
 import { LoginModal } from '../components/LoginModal';
 import { ProfileModal } from '../components/ProfileModal';
-import { UpdateBanner } from '../components/UpdateBanner';
 import { runOtaCheck } from '../lib/updater';
 
 export default function RootLayout() {
@@ -20,7 +18,6 @@ export default function RootLayout() {
     <AuthProvider>
       <YTMobileAudioProvider>
         <StatusBar style="light" backgroundColor="#030303" />
-        <UpdateBanner />
         <Stack
           screenOptions={{
             headerStyle: { backgroundColor: '#030303' },

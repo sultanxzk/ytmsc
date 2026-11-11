@@ -38,28 +38,11 @@ async function viaPiped(id) {
   return null;
 }
 
-// Cache de resolução de áudio por videoId (TTL ~10 min em memória)
-const _audioCache = new Map();
-const CACHE_TTL = 10 * 60 * 1000;
-
+// Do not cache resolved media URLs: YouTube URLs expire and a cached URL causes
+// intermittent 403s, especially when a player retries or seeks later.
 async function resolveAudio(id) {
-  const cached = _audioCache.get(id);
-  if (cached && Date.now() - cached.ts < CACHE_TTL) return cached.result;
-
   let result = await resolveBestAudio(id).catch(() => null);
-  if (!result) {
-    result = await viaPiped(id).catch(() => null);
-  }
-  if (result) {
-    _audioCache.set(id, { result, ts: Date.now() });
-    // Limpa cache antigo periodicamente
-    if (_audioCache.size > 200) {
-      const now = Date.now();
-      for (const [k, v] of _audioCache) {
-        if (now - v.ts > CACHE_TTL) _audioCache.delete(k);
-      }
-    }
-  }
+  if (!result) result = await viaPiped(id).catch(() => null);
   return result;
 }
 
@@ -73,9 +56,9 @@ async function proxyStream(req, res, id) {
   // Prepara headers para upstream
   const upstreamHeaders = {};
   if (audio.userAgent) upstreamHeaders["User-Agent"] = audio.userAgent;
-  // YouTube frequently returns 403 for an unbounded request. ExoPlayer may
-  // start without Range, so force a byte-range request and keep seeking working.
-  upstreamHeaders["Range"] = req.headers.range || "bytes=0-";
+  // Preserve the client's range semantics. An unsolicited Range can make a
+  // partial upstream body look like a complete 200 response to ExoPlayer.
+  if (req.headers.range) upstreamHeaders["Range"] = req.headers.range;
 
   let upstream;
   try {
@@ -86,14 +69,13 @@ async function proxyStream(req, res, id) {
     });
   } catch (e) {
     // Se o URL expirou ou falhou, limpa cache e tenta novamente
-    _audioCache.delete(id);
     const retry = await resolveAudio(id);
     if (!retry?.url) {
       return sendJSON(res, 502, { error: "Upstream stream indisponível.", details: e.message });
     }
     const retryHeaders = {};
     if (retry.userAgent) retryHeaders["User-Agent"] = retry.userAgent;
-    retryHeaders["Range"] = req.headers.range || "bytes=0-";
+    if (req.headers.range) retryHeaders["Range"] = req.headers.range;
     try {
       upstream = await fetch(retry.url, {
         headers: retryHeaders,
@@ -108,12 +90,11 @@ async function proxyStream(req, res, id) {
   if (!upstream.ok && upstream.status !== 206) {
     // Se 403, limpa cache e tenta com novo resolve
     if (upstream.status === 403) {
-      _audioCache.delete(id);
-      const retry = await resolveAudio(id);
+        const retry = await resolveAudio(id);
       if (retry?.url) {
         const retryHeaders = {};
         if (retry.userAgent) retryHeaders["User-Agent"] = retry.userAgent;
-        retryHeaders["Range"] = req.headers.range || "bytes=0-";
+        if (req.headers.range) retryHeaders["Range"] = req.headers.range;
         try {
           upstream = await fetch(retry.url, {
             headers: retryHeaders,

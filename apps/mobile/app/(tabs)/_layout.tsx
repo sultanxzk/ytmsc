@@ -3,12 +3,10 @@ import { Tabs } from 'expo-router';
 import { View } from 'react-native';
 import { Home, Compass, Library } from 'lucide-react-native';
 import { MiniPlayer } from '../../components/MiniPlayer';
-import { UpdateBanner } from '../../components/UpdateBanner';
 
 export default function TabsLayout() {
   return (
     <View style={{ flex: 1, backgroundColor: '#030303' }}>
-      <UpdateBanner />
       <Tabs
         screenOptions={{
           headerShown: false,

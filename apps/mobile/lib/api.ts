@@ -70,7 +70,7 @@ export async function resolveStream(videoId: string): Promise<string | null> {
   try {
     console.log('[API] Buscando stream para:', videoId);
     const json = await fetchJSON(`/api/music/stream?id=${encodeURIComponent(videoId)}`);
-    // streamUrl do backend já é a URL proxy que funciona direto no ExoPlayer
+    // Always use the proxy: direct YouTube URLs expire and may be stale.
     let url = json?.streamUrl || null;
     if (url && !url.startsWith('http')) {
       // Se for path relativo, adiciona base

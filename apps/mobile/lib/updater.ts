@@ -1,5 +1,5 @@
 import * as Updates from 'expo-updates';
-import { Alert, Platform } from 'react-native';
+import { Platform } from 'react-native';
 
 export type UpdateState = 'checking' | 'available' | 'downloading' | 'ready' | 'idle' | 'error';
 
@@ -51,7 +51,7 @@ export function isDevOrWeb() {
  * Fluxo OTA robusto:
  * 1) Se já há um update baixado pendente no boot (isUpdatePending), aplica direto.
  * 2) Senão checa se há update disponível e dispara download automático.
- * 3) Emite estado para o UpdateBanner (sem depender só de Alert).
+ * 3) Applies downloaded updates automatically without user prompts.
  */
 export async function runOtaCheck(): Promise<UpdateState> {
   if (isDevOrWeb()) return 'idle';
@@ -59,11 +59,7 @@ export async function runOtaCheck(): Promise<UpdateState> {
     // 1) Update já baixado em boot anterior -> reload imediato
     if ((Updates as any).isUpdatePending) {
       emit('ready');
-      Alert.alert(
-        'Atualização pronta',
-        'Uma atualização já foi baixada. O app será recarregado agora.',
-        [{ text: 'OK', onPress: reloadForUpdate }]
-      );
+      await reloadForUpdate();
       return 'ready';
     }
 
@@ -83,17 +79,8 @@ export async function runOtaCheck(): Promise<UpdateState> {
       const res = await Updates.fetchUpdateAsync();
       if (res.isNew) {
         emit('ready');
-        // Mostra alert depois de baixar
-        setTimeout(() => {
-          Alert.alert(
-            'Atualização pronta!',
-            'Uma nova versão foi baixada. Quer reiniciar agora?',
-            [
-              { text: 'Depois', style: 'cancel' },
-              { text: 'Reiniciar', onPress: reloadForUpdate },
-            ]
-          );
-        }, 500);
+        // Apply downloaded updates automatically without interrupting the user.
+        await reloadForUpdate();
       } else {
         emit('idle');
       }
