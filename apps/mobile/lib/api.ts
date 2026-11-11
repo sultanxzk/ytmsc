@@ -76,18 +76,16 @@ export async function resolveStream(videoId: string): Promise<string | null> {
       // Se for path relativo, adiciona base
       url = `${API_BASE}${url}`;
     }
-    console.log('[API] Stream resolvido via:', json?.via, url ? 'OK' : 'FALHOU');
-    return url;
-  } catch (err) {
-    // Fallback: tenta proxy direto
-    try {
-      const proxyUrl = `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}&proxy=1`;
-      console.log('[API] Fallback proxy direto:', proxyUrl);
-      return proxyUrl;
-    } catch {
-      console.error('[API] Erro ao buscar stream:', err);
-      return null;
+    if (url) {
+      console.log('[API] Stream resolvido via:', json?.via, 'OK');
+      return url;
     }
+    throw new Error('API não retornou streamUrl');
+  } catch (err) {
+    // Fallback direto: o proxy pode resolver novamente streams expirados.
+    const proxyUrl = `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}&proxy=1`;
+    console.warn('[API] Usando proxy direto:', String((err as Error)?.message || err));
+    return proxyUrl;
   }
 }
 

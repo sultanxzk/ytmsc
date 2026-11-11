@@ -194,7 +194,7 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
     setLoadingId(null);
     if (!uri) {
       console.error('[PLAYER] ❌ SEM STREAM URL para', track.videoId);
-      Alert.alert('Erro ao carregar', 'Não foi possível obter o stream de áudio para esta música.');
+      Alert.alert('Erro ao carregar', 'O servidor não conseguiu preparar o áudio. Verifique a internet e tente novamente.');
       setIsPlaying(false);
       return;
     }
