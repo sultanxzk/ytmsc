@@ -35,7 +35,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#030303"
       },
-      "versionCode": 7
+      "versionCode": 9
     },
     "web": {
       "bundler": "metro"
@@ -57,18 +57,9 @@
             "audio"
           ]
         }
-      ],
-      "expo-updates"
+      ]
     ],
     "scheme": "ytmsc",
-    "runtimeVersion": {
-      "policy": "fingerprint"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/5418531b-4eb8-4b4b-bef7-21a5dcfae955",
-      "checkOnLaunch": "ON_LOAD",
-      "fallbackToCacheTimeout": 0
-    },
     "experiments": {
       "typedRoutes": true
     },

@@ -5,14 +5,8 @@ import { YTMobileAudioProvider } from '../components/YTMobileAudioProvider';
 import { AuthProvider } from '../lib/auth.provider';
 import { LoginModal } from '../components/LoginModal';
 import { ProfileModal } from '../components/ProfileModal';
-import { runOtaCheck } from '../lib/updater';
-
 export default function RootLayout() {
-  useEffect(() => {
-    // Um único fluxo OTA, sem alert de teste nem duas verificações concorrentes.
-    const timer = setTimeout(() => runOtaCheck(), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <AuthProvider>
