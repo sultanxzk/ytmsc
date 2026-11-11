@@ -3,5 +3,22 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/api/home", "destination": "/api/music?route=home" },
+    { "source": "/api/search", "destination": "/api/music?route=search" },
+    { "source": "/api/lyrics", "destination": "/api/music?route=lyrics" },
+    { "source": "/api/album", "destination": "/api/music?route=album" },
+    { "source": "/api/artist", "destination": "/api/music?route=artist" },
+    { "source": "/api/upnext", "destination": "/api/music?route=upnext" },
+    { "source": "/api/related", "destination": "/api/music?route=related" },
+    { "source": "/api/playlist", "destination": "/api/music?route=playlist" },
+    { "source": "/api/suggestions", "destination": "/api/music?route=suggestions" },
+    { "source": "/api/explore", "destination": "/api/music?route=explore" },
+    { "source": "/api/resolve", "destination": "/api/music?route=resolve" },
+    { "source": "/api/stream", "destination": "/api/music?route=stream" },
+    { "source": "/api/music/:route", "destination": "/api/music" },
+    { "source": "/api/auth", "destination": "/api/account?kind=auth" },
+    { "source": "/api/sync", "destination": "/api/account?kind=sync" }
+  ]
 }

@@ -3,8 +3,8 @@
 // GET /api/auth + Authorization: Bearer <token> → { user }
 // DELETE /api/auth + Bearer → logout
 import { createHash, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
-import { kvGet, kvSet, kvDel } from "./_lib/kv.js";
-import { handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { kvGet, kvSet, kvDel } from "../kv.js";
+import { handleOptions, sendJSON, setCors } from "../innertube.js";
 
 const TOKEN_TTL = 30 * 24 * 60 * 60; // 30 dias
 const CODE_TTL = 5 * 60;

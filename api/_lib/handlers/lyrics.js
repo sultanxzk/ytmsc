@@ -1,5 +1,5 @@
 // GET /api/lyrics?id=VIDEO_ID — YouTube Music lyrics via InnerTube, fallback lrclib.net
-import { getInnertube, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;

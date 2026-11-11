@@ -12,30 +12,74 @@
       "resizeMode": "contain",
       "image": "./assets/splash-image.png"
     },
-    "assetBundlePatterns": ["**/*"],
-    "ios": { "supportsTablet": true, "bundleIdentifier": "com.sultanxzk.ytmsc" },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sultanxzk.ytmsc"
+    },
     "android": {
       "package": "com.sultanxzk.ytmsc",
-      "permissions": ["FOREGROUND_SERVICE", "FOREGROUND_SERVICE_MEDIA_PLAYBACK", "POST_NOTIFICATIONS"],
+      "permissions": [
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        "POST_NOTIFICATIONS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.INTERNET"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#030303"
-      }
+      },
+      "versionCode": 5
     },
-    "web": { "bundler": "metro" },
+    "web": {
+      "bundler": "metro"
+    },
     "plugins": [
       "expo-router",
-      ["expo-av", { "backgroundModes": ["audio"] }],
-      ["expo-file-system", { "backgroundModes": ["audio"] }],
+      [
+        "expo-av",
+        {
+          "backgroundModes": [
+            "audio"
+          ]
+        }
+      ],
+      [
+        "expo-file-system",
+        {
+          "backgroundModes": [
+            "audio"
+          ]
+        }
+      ],
       "expo-updates"
     ],
     "scheme": "ytmsc",
-    "runtimeVersion": { "policy": "fingerprint" },
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
     "updates": {
-      "url": "https://u.expo.dev/PROJECT_ID",
+      "url": "https://u.expo.dev/5418531b-4eb8-4b4b-bef7-21a5dcfae955",
       "checkOnLaunch": "ON_LOAD",
       "fallbackToCacheTimeout": 0
     },
-    "experiments": { "typedRoutes": true }
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "5418531b-4eb8-4b4b-bef7-21a5dcfae955"
+      }
+    },
+    "owner": "sultanxzk"
   }
 }

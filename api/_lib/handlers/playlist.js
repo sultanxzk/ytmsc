@@ -1,5 +1,5 @@
 // GET /api/playlist?id=PL... (or VL...) — YouTube Music playlist via InnerTube
-import { getInnertube, nodeToTrack, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       const wrapper = node?.primary ? node : node;
       let t = null;
       if (node?.primary || node?.video_id) {
-        const { panelVideoToTrack } = await import("./_lib/innertube.js");
+        const { panelVideoToTrack } = await import("../innertube.js");
         t = panelVideoToTrack(wrapper?.primary ? wrapper : node);
       }
       if (!t) t = nodeToTrack(node);

@@ -1,5 +1,5 @@
 // GET /api/album?id=BROWSE_ID — get tracks of a YouTube Music album/playlist
-import { getInnertube, nodeToTrack, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;

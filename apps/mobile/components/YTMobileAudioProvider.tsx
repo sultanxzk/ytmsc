@@ -160,36 +160,58 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
     setLoadingId(track.videoId);
     addHistory(track).catch(() => {});
 
-    const offline = await getOfflineTrack(track.videoId);
-    const uri = offline?.localUri || track.localUri || track.videoUrl || (await resolveStream(track.videoId));
+    let uri: string | null = null;
+    let lastErr: any = null;
+    try {
+      const offline = await getOfflineTrack(track.videoId);
+      uri = offline?.localUri || track.localUri || track.videoUrl || (await resolveStream(track.videoId));
+    } catch (e) {
+      lastErr = e;
+    }
+    if (!uri) {
+      // retry uma vez caso a API tenha falhado (timeout/DNS)
+      try {
+        uri = await resolveStream(track.videoId);
+        lastErr = null;
+      } catch (e) { lastErr = e; }
+    }
     setLoadingId(null);
-    if (!uri) { setIsPlaying(false); return; }
+    if (!uri) {
+      if (__DEV__) console.warn('[YTMobileAudioProvider] sem streamUrl para', track.videoId, lastErr);
+      setIsPlaying(false);
+      return;
+    }
 
-    const { sound } = await Audio.Sound.createAsync(
-      { uri },
-      { shouldPlay: true }
-    );
-    soundRef.current = sound;
-    setIsPlaying(true);
+    try {
+      const { sound } = await Audio.Sound.createAsync(
+        { uri },
+        { shouldPlay: true }
+      );
+      soundRef.current = sound;
+      setIsPlaying(true);
 
-    const p = prefsRef.current;
-    await sound.setVolumeAsync(p.volume).catch(() => {});
-    await sound.setRateAsync(p.rate, true).catch(() => {});
+      const p = prefsRef.current;
+      await sound.setVolumeAsync(p.volume).catch(() => {});
+      await sound.setRateAsync(p.rate, true).catch(() => {});
 
-    sound.setOnPlaybackStatusUpdate(async (status) => {
-      if (!status.isLoaded) return;
-      setCurrentTime((status.positionMillis || 0) / 1000);
-      if (status.durationMillis) setDuration(status.durationMillis / 1000);
-      if (status.isPlaying !== undefined) setIsPlaying(!!status.isPlaying);
-      if (status.didJustFinish) {
-        if (repeatRef.current === 'one') {
-          await sound.setPositionAsync(0);
-          await sound.playAsync();
-          return;
+      sound.setOnPlaybackStatusUpdate(async (status) => {
+        if (!status.isLoaded) return;
+        setCurrentTime((status.positionMillis || 0) / 1000);
+        if (status.durationMillis) setDuration(status.durationMillis / 1000);
+        if (status.isPlaying !== undefined) setIsPlaying(!!status.isPlaying);
+        if (status.didJustFinish) {
+          if (repeatRef.current === 'one') {
+            await sound.setPositionAsync(0);
+            await sound.playAsync();
+            return;
+          }
+          await nextRef.current();
         }
-        await nextRef.current();
-      }
-    });
+      });
+    } catch (e) {
+      if (__DEV__) console.warn('[YTMobileAudioProvider] createAsync falhou', e);
+      setIsPlaying(false);
+    }
   }, []);
 
   const playTrack = useCallback(async (track: Track, q?: Track[]) => {

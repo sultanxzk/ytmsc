@@ -1,5 +1,5 @@
 // GET /api/artist?id=UC... — YouTube Music artist page via InnerTube
-import { getInnertube, nodeToTrack, nodeToAlbum, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, nodeToAlbum, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
               const a = nodeToAlbum(node);
               if (a) items.push(a);
             } else if (node.item_type === "playlist") {
-              const p = (await import("./_lib/innertube.js")).nodeToPlaylist(node);
+              const p = (await import("../innertube.js")).nodeToPlaylist(node);
               if (p) items.push(p);
             } else {
               const t = nodeToTrack(node);
@@ -77,7 +77,7 @@ export default async function handler(req, res) {
               const a = nodeToAlbum(node);
               if (a) items.push(a);
             } else if (node.item_type === "playlist") {
-              const p2 = (await import("./_lib/innertube.js")).nodeToPlaylist(node);
+              const p2 = (await import("../innertube.js")).nodeToPlaylist(node);
               if (p2) items.push(p2);
             } else if (hasVideo) {
               const t = nodeToTrack(node);
@@ -90,7 +90,7 @@ export default async function handler(req, res) {
             const a = nodeToAlbum(node);
             if (a) items.push(a);
           } else if (node.video_id) {
-            const { panelVideoToTrack } = await import("./_lib/innertube.js");
+            const { panelVideoToTrack } = await import("../innertube.js");
             const t = panelVideoToTrack(node);
             if (t) items.push(t);
           }

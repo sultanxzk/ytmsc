@@ -1,5 +1,5 @@
 // GET /api/explore — YouTube Music explore via InnerTube
-import { getInnertube, nodeToTrack, nodeToAlbum, nodeToPlaylist, nodeToGenre, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, nodeToAlbum, nodeToPlaylist, nodeToGenre, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 function genreFromButton(node) {
   try {
@@ -87,7 +87,7 @@ export default async function handler(req, res) {
           const a = nodeToAlbum(n);
           if (a) items.push(a);
         } else if (n.video_id) {
-          const { panelVideoToTrack } = await import("./_lib/innertube.js");
+          const { panelVideoToTrack } = await import("../innertube.js");
           const t = panelVideoToTrack(n);
           if (t) items.push(t);
         }

@@ -1,5 +1,5 @@
 // GET /api/related?id=VIDEO_ID — YouTube Music related tracks via InnerTube
-import { getInnertube, nodeToTrack, nodeToAlbum, nodeToPlaylist, panelVideoToTrack, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, nodeToAlbum, nodeToPlaylist, panelVideoToTrack, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;

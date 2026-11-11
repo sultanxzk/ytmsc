@@ -1,8 +1,8 @@
 // GET /api/sync → todos os stores do usuário autenticado (Bearer)
 // PUT /api/sync { store, data } → salva um store
 // Stores sincronizados: likes, playlists, history, settings, subscriptions, libraryAlbums, trackCache
-import { kvGet, kvSet } from "./_lib/kv.js";
-import { handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { kvGet, kvSet } from "../kv.js";
+import { handleOptions, sendJSON, setCors } from "../innertube.js";
 import { userIdFromToken } from "./auth.js";
 
 const STORES = ["likes", "playlists", "history", "settings", "subscriptions", "libraryAlbums", "trackCache", "downloads"];

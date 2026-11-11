@@ -4,17 +4,17 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "android": { "variant": "debug" },
+      "android": { "buildType": "apk" },
       "channel": "development"
     },
     "preview": {
       "distribution": "internal",
-      "android": { "variant": "debug" },
+      "android": { "buildType": "apk" },
       "channel": "preview",
       "autoIncrement": true
     },
     "production": {
-      "android": { "variant": "release" },
+      "android": { "buildType": "app-bundle" },
       "channel": "production",
       "autoIncrement": true
     }

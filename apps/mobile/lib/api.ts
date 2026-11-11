@@ -47,7 +47,7 @@ async function fetchJSON(path: string) {
 }
 
 export async function fetchHome() {
-  const json = await fetchJSON('/api/home');
+  const json = await fetchJSON('/api/music/home');
   const tracks = (json?.tracks || []).map(mapTrack).filter(Boolean) as Track[];
   return {
     tracks,
@@ -68,7 +68,7 @@ export async function fetchHome() {
 
 export async function resolveStream(videoId: string): Promise<string | null> {
   try {
-    const json = await fetchJSON(`/api/stream?id=${encodeURIComponent(videoId)}`);
+    const json = await fetchJSON(`/api/music/stream?id=${encodeURIComponent(videoId)}`);
     return json?.streamUrl || null;
   } catch {
     return null;
@@ -78,13 +78,13 @@ export async function resolveStream(videoId: string): Promise<string | null> {
 export async function searchTracks(q: string, limit = 30): Promise<Track[]> {
   const term = String(q || '').trim();
   if (!term) return [];
-  const json = await fetchJSON(`/api/search?q=${encodeURIComponent(term)}`);
+  const json = await fetchJSON(`/api/music/search?q=${encodeURIComponent(term)}`);
   return ((json?.tracks || json || []) as any[]).map(mapTrack).filter(Boolean).slice(0, limit) as Track[];
 }
 
 export async function fetchLyrics(videoId: string): Promise<string> {
   try {
-    const json = await fetchJSON(`/api/lyrics?id=${encodeURIComponent(videoId)}`);
+    const json = await fetchJSON(`/api/music/lyrics?id=${encodeURIComponent(videoId)}`);
     return json?.lyrics || '';
   } catch {
     return '';
@@ -94,16 +94,16 @@ export async function fetchLyrics(videoId: string): Promise<string> {
 export async function getBrowsePage(browseId: string) {
   const isAlbumish = /^MPREb_/.test(String(browseId));
   if (isAlbumish) {
-    const json = await fetchJSON(`/api/album?id=${encodeURIComponent(browseId)}`);
+    const json = await fetchJSON(`/api/music/album?id=${encodeURIComponent(browseId)}`);
     return { title: json?.album?.title || '', tracks: (json?.tracks || []).map(mapTrack).filter(Boolean) as Track[] };
   }
-  const json = await fetchJSON(`/api/playlist?id=${encodeURIComponent(browseId)}`);
+  const json = await fetchJSON(`/api/music/playlist?id=${encodeURIComponent(browseId)}`);
   return { title: json?.playlist?.title || '', tracks: (json?.tracks || []).map(mapTrack).filter(Boolean) as Track[] };
 }
 
 export async function getUpNext(videoId: string): Promise<Track[]> {
   try {
-    const json = await fetchJSON(`/api/upnext?id=${encodeURIComponent(videoId)}`);
+    const json = await fetchJSON(`/api/music/upnext?id=${encodeURIComponent(videoId)}`);
     return (json?.tracks || []).map(mapTrack).filter(Boolean) as Track[];
   } catch {
     return [];

@@ -1,5 +1,5 @@
 // GET /api/upnext?id=VIDEO_ID — YouTube Music automix / up next via InnerTube
-import { getInnertube, panelVideoToTrack, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, panelVideoToTrack, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;

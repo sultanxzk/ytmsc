@@ -2,7 +2,7 @@
 // quando o videoId original falha com 100/2/101/150 no IFrame Player.
 // Estratégia: 1) o próprio ID via upnext (se responder, está vivo); 2) busca por
 // "título + artista" no InnerTube e retorna a primeira música tocável found.
-import { getInnertube, nodeToTrack, toArray, panelVideoToTrack, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, toArray, panelVideoToTrack, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;

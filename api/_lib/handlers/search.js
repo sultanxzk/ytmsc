@@ -1,5 +1,5 @@
 // GET /api/search?q=TERMO&type=song|artist|album|playlist|all — YouTube Music search via InnerTube
-import { getInnertube, nodeToTrack, nodeToArtist, nodeToAlbum, nodeToPlaylist, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, nodeToTrack, nodeToArtist, nodeToAlbum, nodeToPlaylist, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 async function searchSongs(innertube, q) {
   const result = await innertube.music.search(q, { type: "song" });

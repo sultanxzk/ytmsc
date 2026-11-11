@@ -1,26 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import * as Updates from 'expo-updates';
-import { checkForUpdate, isDevOrWeb } from '../lib/updater';
+import { isDevOrWeb, subscribeUpdates, type UpdateState } from '../lib/updater';
 
 export function UpdateBanner() {
   const [state, setState] = useState<'idle' | 'checking' | 'available' | 'ready' | 'error'>('idle');
-  const [pct, setPct] = useState(0);
-
-  const refresh = async () => {
-    if (isDevOrWeb()) return;
-    try {
-      const s = await checkForUpdate();
-      setState(s === 'available' ? 'available' : s === ('ready' as any) ? 'ready' : 'idle');
-      // @ts-ignore expo-updates em web/dev pode derrubar
-    } catch {
-      setState('error');
-    }
-  };
 
   useEffect(() => {
-    // checa no boot silenciosamente
-    refresh();
+    if (isDevOrWeb()) return;
+    const unsub = subscribeUpdates((s: UpdateState) => setState(s as any));
+    return () => { unsub(); };
   }, []);
 
   if (state === 'idle' || state === 'checking') return null;

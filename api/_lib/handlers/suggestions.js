@@ -1,5 +1,5 @@
 // GET /api/suggestions?q=... — YouTube Music search suggestions via InnerTube
-import { getInnertube, toArray, handleOptions, sendJSON, setCors } from "./_lib/innertube.js";
+import { getInnertube, toArray, handleOptions, sendJSON, setCors } from "../innertube.js";
 
 export default async function handler(req, res) {
   if (handleOptions(req, res)) return;
