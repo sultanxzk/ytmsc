@@ -56,40 +56,64 @@ export default function SearchScreen() {
           <ActivityIndicator size="large" color="#FF0000" />
         </View>
       ) : (
-        <FlatList
-          data={results}
-          keyExtractor={(item) => item.videoId}
-          contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 140 }}
-          ListEmptyComponent={
-            searched ? (
-              <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Nenhum resultado para "{q}".</Text>
-            ) : (
-              <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Digite e aperte buscar.</Text>
-            )
-          }
-          renderItem={({ item }) => {
-            const isCurrent = currentTrack?.videoId === item.videoId;
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  console.log('[SEARCH] Botão clicado! Item:', item.title, item.videoId);
-                  Alert.alert('Debug', `Tentando tocar: ${item.title}`);
-                  playTrack(item, results);
-                }}
-                style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}
-              >
-                <Image source={{ uri: item.cover }} style={{ width: 48, height: 48, borderRadius: 4, backgroundColor: '#212121' }} />
-                <View style={{ flex: 1, marginLeft: 12 }}>
-                  <Text numberOfLines={1} style={{ color: isCurrent ? '#FF0000' : '#ffffff', fontSize: 14, fontWeight: '500' }}>{item.title}</Text>
-                  <Text numberOfLines={1} style={{ color: '#aaaaaa', fontSize: 13 }}>{item.artist} • {item.duration || fmtSec(item.durationSec)}</Text>
-                </View>
-                {loadingId === item.videoId
-                  ? <ActivityIndicator size="small" color="#fff" />
-                  : <Play color="#ffffff" size={20} fill="#ffffff" />}
-              </TouchableOpacity>
-            );
-          }}
-        />
+        <>
+          {/* BOTÃO DE TESTE GIGANTE */}
+          {results.length > 0 && (
+            <TouchableOpacity
+              onPress={() => {
+                Alert.alert('TESTE', 'Botão vermelho funcionou! Agora testando playTrack...');
+                console.log('[TEST] Tentando tocar primeira música:', results[0]);
+                playTrack(results[0], results);
+              }}
+              style={{
+                backgroundColor: '#FF0000',
+                padding: 20,
+                margin: 16,
+                borderRadius: 12,
+                alignItems: 'center',
+              }}
+            >
+              <Text style={{ color: '#ffffff', fontSize: 18, fontWeight: '700' }}>
+                🔴 TESTE: TOCAR PRIMEIRA MÚSICA
+              </Text>
+            </TouchableOpacity>
+          )}
+
+          <FlatList
+            data={results}
+            keyExtractor={(item) => item.videoId}
+            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 140 }}
+            ListEmptyComponent={
+              searched ? (
+                <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Nenhum resultado para "{q}".</Text>
+              ) : (
+                <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Digite e aperte buscar.</Text>
+              )
+            }
+            renderItem={({ item }) => {
+              const isCurrent = currentTrack?.videoId === item.videoId;
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    console.log('[SEARCH] Botão clicado! Item:', item.title, item.videoId);
+                    Alert.alert('Debug', `Tentando tocar: ${item.title}`);
+                    playTrack(item, results);
+                  }}
+                  style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}
+                >
+                  <Image source={{ uri: item.cover }} style={{ width: 48, height: 48, borderRadius: 4, backgroundColor: '#212121' }} />
+                  <View style={{ flex: 1, marginLeft: 12 }}>
+                    <Text numberOfLines={1} style={{ color: isCurrent ? '#FF0000' : '#ffffff', fontSize: 14, fontWeight: '500' }}>{item.title}</Text>
+                    <Text numberOfLines={1} style={{ color: '#aaaaaa', fontSize: 13 }}>{item.artist} • {item.duration || fmtSec(item.durationSec)}</Text>
+                  </View>
+                  {loadingId === item.videoId
+                    ? <ActivityIndicator size="small" color="#fff" />
+                    : <Play color="#ffffff" size={20} fill="#ffffff" />}
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </>
       )}
     </View>
   );
