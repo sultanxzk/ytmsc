@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, FlatList, ActivityIndicator, Alert } from 'react-native';
 import { ArrowLeft, Play, Search as SearchIcon } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useAudio } from '../components/YTMobileAudioProvider';
@@ -70,7 +70,14 @@ export default function SearchScreen() {
           renderItem={({ item }) => {
             const isCurrent = currentTrack?.videoId === item.videoId;
             return (
-              <TouchableOpacity onPress={() => playTrack(item, results)} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  console.log('[SEARCH] Botão clicado! Item:', item.title, item.videoId);
+                  Alert.alert('Debug', `Tentando tocar: ${item.title}`);
+                  playTrack(item, results);
+                }}
+                style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}
+              >
                 <Image source={{ uri: item.cover }} style={{ width: 48, height: 48, borderRadius: 4, backgroundColor: '#212121' }} />
                 <View style={{ flex: 1, marginLeft: 12 }}>
                   <Text numberOfLines={1} style={{ color: isCurrent ? '#FF0000' : '#ffffff', fontSize: 14, fontWeight: '500' }}>{item.title}</Text>
