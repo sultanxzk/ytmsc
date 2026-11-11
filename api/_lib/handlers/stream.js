@@ -113,7 +113,7 @@ async function proxyStream(req, res, id) {
       if (retry?.url) {
         const retryHeaders = {};
         if (retry.userAgent) retryHeaders["User-Agent"] = retry.userAgent;
-        if (req.headers.range) retryHeaders["Range"] = req.headers.range;
+        retryHeaders["Range"] = req.headers.range || "bytes=0-";
         try {
           upstream = await fetch(retry.url, {
             headers: retryHeaders,
@@ -151,10 +151,12 @@ async function proxyStream(req, res, id) {
   // When ExoPlayer starts without Range, present the complete proxied body as
   // a normal 200 response. Some ExoPlayer versions reject an initial 206 whose
   // Content-Range covers the whole file.
-  res.statusCode = clientRequestedRange ? upstream.status : 200; // 200 or 206
+  res.statusCode = clientRequestedRange ? (upstream.status === 206 ? 206 : 200) : 200;
+  if (!clientRequestedRange) res.removeHeader("Content-Range");
 
-  // Cache: permite cache no edge por 5 min
-  res.setHeader("Cache-Control", "public, max-age=300, s-maxage=300");
+  // Never cache byte ranges or expiring YouTube URLs.
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+  res.setHeader("Vary", "Range");
 
   // status already set above; keep Content-Length from upstream.
 
