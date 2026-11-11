@@ -73,7 +73,9 @@ async function proxyStream(req, res, id) {
   // Prepara headers para upstream
   const upstreamHeaders = {};
   if (audio.userAgent) upstreamHeaders["User-Agent"] = audio.userAgent;
-  if (req.headers.range) upstreamHeaders["Range"] = req.headers.range;
+  // YouTube frequently returns 403 for an unbounded request. ExoPlayer may
+  // start without Range, so force a byte-range request and keep seeking working.
+  upstreamHeaders["Range"] = req.headers.range || "bytes=0-";
 
   let upstream;
   try {
