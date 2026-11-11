@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Alert } from 'react-native';
+import * as Updates from 'expo-updates';
 import { YTMobileAudioProvider } from '../components/YTMobileAudioProvider';
 import { AuthProvider } from '../lib/auth.provider';
 import { LoginModal } from '../components/LoginModal';
@@ -14,22 +15,21 @@ export default function RootLayout() {
     // FORÇA atualização OTA imediatamente no boot
     const forceUpdate = async () => {
       try {
-        const Updates = await import('expo-updates');
-        if (!Updates.default.isEnabled || __DEV__) return;
+        if (!Updates.isEnabled || __DEV__) return;
 
         console.log('[FORCE OTA] Verificando atualizações...');
-        const check = await Updates.default.checkForUpdateAsync();
+        const check = await Updates.checkForUpdateAsync();
 
         if (check.isAvailable) {
           console.log('[FORCE OTA] Atualização encontrada! Baixando...');
-          const fetch = await Updates.default.fetchUpdateAsync();
+          const fetch = await Updates.fetchUpdateAsync();
 
           if (fetch.isNew) {
             console.log('[FORCE OTA] Atualização baixada! Reiniciando...');
             Alert.alert(
               'Atualização Crítica',
               'Uma atualização importante foi baixada. O app será reiniciado agora.',
-              [{ text: 'OK', onPress: () => Updates.default.reloadAsync() }]
+              [{ text: 'OK', onPress: () => Updates.reloadAsync() }]
             );
           }
         } else {

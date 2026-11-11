@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
+import { Alert } from 'react-native';
 import { Audio } from 'expo-av';
 import * as FileSystem from 'expo-file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -150,6 +151,8 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
   };
 
   const loadTrack = useCallback(async (track: Track) => {
+    console.log('[PLAYER] Iniciando loadTrack para:', track.title, track.videoId);
+
     if (soundRef.current) {
       await soundRef.current.unloadAsync().catch(() => {});
       soundRef.current = null;
@@ -162,31 +165,47 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
 
     let uri: string | null = null;
     let lastErr: any = null;
+
+    console.log('[PLAYER] Tentando resolver stream...');
     try {
       const offline = await getOfflineTrack(track.videoId);
+      console.log('[PLAYER] Offline track:', offline ? 'encontrada' : 'não encontrada');
       uri = offline?.localUri || track.localUri || track.videoUrl || (await resolveStream(track.videoId));
+      console.log('[PLAYER] URI resolvida (primeira tentativa):', uri ? 'OK' : 'FALHOU');
     } catch (e) {
+      console.error('[PLAYER] Erro ao resolver stream (primeira tentativa):', e);
       lastErr = e;
     }
+
     if (!uri) {
       // retry uma vez caso a API tenha falhado (timeout/DNS)
+      console.log('[PLAYER] Tentando novamente...');
       try {
         uri = await resolveStream(track.videoId);
+        console.log('[PLAYER] URI resolvida (segunda tentativa):', uri ? 'OK' : 'FALHOU');
         lastErr = null;
-      } catch (e) { lastErr = e; }
+      } catch (e) {
+        console.error('[PLAYER] Erro ao resolver stream (segunda tentativa):', e);
+        lastErr = e;
+      }
     }
+
     setLoadingId(null);
     if (!uri) {
-      if (__DEV__) console.warn('[YTMobileAudioProvider] sem streamUrl para', track.videoId, lastErr);
+      console.error('[PLAYER] ❌ SEM STREAM URL para', track.videoId, lastErr);
+      Alert.alert('Erro ao carregar', `Não foi possível obter o stream de áudio. Erro: ${String(lastErr?.message || lastErr)}`);
       setIsPlaying(false);
       return;
     }
 
+    console.log('[PLAYER] ✅ Stream URL obtida, criando player...');
+    console.log('[PLAYER] ✅ Stream URL obtida, criando player...');
     try {
       const { sound } = await Audio.Sound.createAsync(
         { uri },
         { shouldPlay: true }
       );
+      console.log('[PLAYER] ✅ Player criado com sucesso!');
       soundRef.current = sound;
       setIsPlaying(true);
 
@@ -209,7 +228,8 @@ export function YTMobileAudioProvider({ children }: { children: React.ReactNode 
         }
       });
     } catch (e) {
-      if (__DEV__) console.warn('[YTMobileAudioProvider] createAsync falhou', e);
+      console.error('[PLAYER] ❌ createAsync falhou:', e);
+      Alert.alert('Erro no player', `Não foi possível criar o player de áudio. Erro: ${String(e?.message || e)}`);
       setIsPlaying(false);
     }
   }, []);

@@ -68,9 +68,13 @@ export async function fetchHome() {
 
 export async function resolveStream(videoId: string): Promise<string | null> {
   try {
+    console.log('[API] Buscando stream para:', videoId);
+    console.log('[API] URL:', `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}`);
     const json = await fetchJSON(`/api/music/stream?id=${encodeURIComponent(videoId)}`);
+    console.log('[API] Resposta:', json);
     return json?.streamUrl || null;
-  } catch {
+  } catch (err) {
+    console.error('[API] Erro ao buscar stream:', err);
     return null;
   }
 }
