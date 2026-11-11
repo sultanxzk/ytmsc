@@ -20,7 +20,9 @@ export default function UpdateTestScreen() {
       addLog('🔍 Verificando atualizações...');
       addLog(`📱 Canal: ${Updates.channel || 'N/A'}`);
       addLog(`🔑 Runtime: ${Updates.runtimeVersion || 'N/A'}`);
-      addLog(`🌐 Update URL: ${Updates.updateUrl || 'N/A'}`);
+
+      const manifest = Updates.manifest;
+      addLog(`📋 Manifest: ${manifest ? 'presente' : 'ausente'}`);
 
       const result = await Updates.checkForUpdateAsync();
       addLog(`✅ Check completo: ${JSON.stringify(result)}`);

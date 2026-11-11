@@ -91,7 +91,7 @@ export default function LibraryScreen() {
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <Text style={{ color: '#ffffff', fontSize: 26, fontWeight: '700' }}>Biblioteca</Text>
         <View style={{ flexDirection: 'row', gap: 8 }}>
-          <TouchableOpacity onPress={() => router.push('/update-test')} style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={() => router.push('/update-test' as any)} style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ color: '#fff', fontSize: 18 }}>🔄</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => router.push('/search')} style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#212121', alignItems: 'center', justifyContent: 'center' }}>
