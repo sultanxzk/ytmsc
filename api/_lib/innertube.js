@@ -15,6 +15,8 @@ export class MemoryCache {
 
 let _client = null;
 let _promise = null;
+let _vrClient = null;
+let _vrPromise = null;
 
 // Silencia o warning TextBadge not found! — o parser JIT gera a classe na hora,
 // mas a function não deve falhar por isso.
@@ -45,6 +47,115 @@ export async function getInnertube() {
       throw e;
     });
   return _promise;
+}
+
+// ANDROID_VR client — retorna URLs diretas sem decipher para quase todos os vídeos,
+// incluindo itag 140 (audio/mp4 128kbps) e itag 251 (audio/webm opus 160kbps).
+export async function getInnertubeVR() {
+  if (_vrClient) return _vrClient;
+  if (_vrPromise) return _vrPromise;
+  patchParserWarn();
+  _vrPromise = Innertube.create({
+    client_type: "ANDROID_VR",
+    cache: new MemoryCache(),
+    retrieve_player: false,
+  })
+    .then((c) => ((_vrClient = c), c))
+    .catch((e) => {
+      _vrPromise = null;
+      throw e;
+    });
+  return _vrPromise;
+}
+
+/**
+ * Resolve o melhor formato de áudio para um videoId.
+ * Tenta ANDROID_VR (URLs diretas) → ANDROID (muxado) → fallbacks.
+ * Retorna { url, mimeType, contentLength, userAgent } ou null.
+ */
+export async function resolveBestAudio(videoId) {
+  // 1) ANDROID_VR — retorna URLs diretas com itag 140/251
+  try {
+    const vr = await getInnertubeVR();
+    const bi = await vr.getBasicInfo(videoId);
+    if (bi.playability_status?.status === "OK" || !bi.playability_status?.status) {
+      const sd = bi.streaming_data || {};
+      const adapt = sd.adaptive_formats || sd.adaptiveFormats || [];
+      // Prefere itag 140 (mp4a.40.2 128kbps) — ExoPlayer suporta nativamente
+      const audio140 = adapt.find((f) => f.itag === 140 && f.url);
+      if (audio140) {
+        return {
+          url: audio140.url,
+          mimeType: audio140.mime_type || "audio/mp4",
+          contentLength: audio140.content_length || null,
+          userAgent: vr.session.context.client.userAgent || null,
+          via: "innertube-vr",
+        };
+      }
+      // Fallback: qualquer formato de áudio com URL direta
+      const anyAudio = adapt.find(
+        (f) => f.url && (f.mime_type || "").startsWith("audio/")
+      );
+      if (anyAudio) {
+        return {
+          url: anyAudio.url,
+          mimeType: anyAudio.mime_type || "audio/mp4",
+          contentLength: anyAudio.content_length || null,
+          userAgent: vr.session.context.client.userAgent || null,
+          via: "innertube-vr",
+        };
+      }
+      // Muxado do VR
+      const mux = (sd.formats || []).find((f) => f.url);
+      if (mux) {
+        return {
+          url: mux.url,
+          mimeType: mux.mime_type || "video/mp4",
+          contentLength: mux.content_length || null,
+          userAgent: vr.session.context.client.userAgent || null,
+          via: "innertube-vr-mux",
+        };
+      }
+    }
+  } catch (e) {
+    console.error("[resolveBestAudio] VR client failed:", e.message);
+  }
+
+  // 2) ANDROID — muxado itag 18 (mp4)
+  try {
+    const android = await getInnertube();
+    const bi = await android.getBasicInfo(videoId);
+    if (bi.playability_status?.status === "OK" || !bi.playability_status?.status) {
+      const sd = bi.streaming_data || {};
+      const adapt = sd.adaptive_formats || sd.adaptiveFormats || [];
+      const audio = adapt.find(
+        (f) => f.url && (f.mime_type || "").startsWith("audio/")
+      );
+      if (audio) {
+        return {
+          url: audio.url,
+          mimeType: audio.mime_type || "audio/mp4",
+          contentLength: audio.content_length || null,
+          userAgent: android.session.context.client.userAgent || null,
+          via: "innertube-android",
+        };
+      }
+      const mux = (sd.formats || []).find((f) => f.url);
+      if (mux) {
+        return {
+          url: mux.url,
+          mimeType: mux.mime_type || "video/mp4",
+          contentLength: mux.content_length || null,
+          userAgent: android.session.context.client.userAgent || null,
+          via: "innertube-android-mux",
+        };
+      }
+    }
+  } catch (e) {
+    console.error("[resolveBestAudio] ANDROID client failed:", e.message);
+  }
+
+  return null;
 }
 
 const FALLBACK_COVER = "https://picsum.photos/seed/ytm/400/400";

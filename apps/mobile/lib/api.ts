@@ -69,13 +69,25 @@ export async function fetchHome() {
 export async function resolveStream(videoId: string): Promise<string | null> {
   try {
     console.log('[API] Buscando stream para:', videoId);
-    console.log('[API] URL:', `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}`);
     const json = await fetchJSON(`/api/music/stream?id=${encodeURIComponent(videoId)}`);
-    console.log('[API] Resposta:', json);
-    return json?.streamUrl || null;
+    // streamUrl do backend já é a URL proxy que funciona direto no ExoPlayer
+    let url = json?.streamUrl || null;
+    if (url && !url.startsWith('http')) {
+      // Se for path relativo, adiciona base
+      url = `${API_BASE}${url}`;
+    }
+    console.log('[API] Stream resolvido via:', json?.via, url ? 'OK' : 'FALHOU');
+    return url;
   } catch (err) {
-    console.error('[API] Erro ao buscar stream:', err);
-    return null;
+    // Fallback: tenta proxy direto
+    try {
+      const proxyUrl = `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}&proxy=1`;
+      console.log('[API] Fallback proxy direto:', proxyUrl);
+      return proxyUrl;
+    } catch {
+      console.error('[API] Erro ao buscar stream:', err);
+      return null;
+    }
   }
 }
 

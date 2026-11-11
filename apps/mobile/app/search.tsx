@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity, FlatList, ActivityIndicator, Alert } from 'react-native';
-import { ArrowLeft, Play, Search as SearchIcon } from 'lucide-react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
+import { ArrowLeft, Play, Pause, Search as SearchIcon } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useAudio } from '../components/YTMobileAudioProvider';
 import { searchTracks, fmtSec, type Track } from '../lib/api';
 
 export default function SearchScreen() {
   const router = useRouter();
-  const { playTrack, currentTrack, loadingId } = useAudio();
+  const { playTrack, currentTrack, isPlaying, loadingId } = useAudio();
   const [q, setQ] = useState('');
   const [results, setResults] = useState<Track[]>([]);
   const [loading, setLoading] = useState(false);
@@ -56,64 +56,40 @@ export default function SearchScreen() {
           <ActivityIndicator size="large" color="#FF0000" />
         </View>
       ) : (
-        <>
-          {/* BOTÃO DE TESTE GIGANTE */}
-          {results.length > 0 && (
-            <TouchableOpacity
-              onPress={() => {
-                Alert.alert('TESTE', 'Botão vermelho funcionou! Agora testando playTrack...');
-                console.log('[TEST] Tentando tocar primeira música:', results[0]);
-                playTrack(results[0], results);
-              }}
-              style={{
-                backgroundColor: '#FF0000',
-                padding: 20,
-                margin: 16,
-                borderRadius: 12,
-                alignItems: 'center',
-              }}
-            >
-              <Text style={{ color: '#ffffff', fontSize: 18, fontWeight: '700' }}>
-                🔴 TESTE: TOCAR PRIMEIRA MÚSICA
-              </Text>
-            </TouchableOpacity>
-          )}
-
-          <FlatList
-            data={results}
-            keyExtractor={(item) => item.videoId}
-            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 140 }}
-            ListEmptyComponent={
-              searched ? (
-                <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Nenhum resultado para "{q}".</Text>
-              ) : (
-                <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Digite e aperte buscar.</Text>
-              )
-            }
-            renderItem={({ item }) => {
-              const isCurrent = currentTrack?.videoId === item.videoId;
-              return (
-                <TouchableOpacity
-                  onPress={() => {
-                    console.log('[SEARCH] Botão clicado! Item:', item.title, item.videoId);
-                    Alert.alert('Debug', `Tentando tocar: ${item.title}`);
-                    playTrack(item, results);
-                  }}
-                  style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}
-                >
-                  <Image source={{ uri: item.cover }} style={{ width: 48, height: 48, borderRadius: 4, backgroundColor: '#212121' }} />
-                  <View style={{ flex: 1, marginLeft: 12 }}>
-                    <Text numberOfLines={1} style={{ color: isCurrent ? '#FF0000' : '#ffffff', fontSize: 14, fontWeight: '500' }}>{item.title}</Text>
-                    <Text numberOfLines={1} style={{ color: '#aaaaaa', fontSize: 13 }}>{item.artist} • {item.duration || fmtSec(item.durationSec)}</Text>
-                  </View>
-                  {loadingId === item.videoId
-                    ? <ActivityIndicator size="small" color="#fff" />
+        <FlatList
+          data={results}
+          keyExtractor={(item) => item.videoId}
+          contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 140 }}
+          ListEmptyComponent={
+            searched ? (
+              <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Nenhum resultado para "{q}".</Text>
+            ) : (
+              <Text style={{ color: '#aaaaaa', textAlign: 'center', marginTop: 40 }}>Digite e aperte buscar.</Text>
+            )
+          }
+          renderItem={({ item }) => {
+            const isCurrent = currentTrack?.videoId === item.videoId;
+            const isItemPlaying = isCurrent && isPlaying;
+            return (
+              <TouchableOpacity
+                onPress={() => playTrack(item, results)}
+                activeOpacity={0.6}
+                style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}
+              >
+                <Image source={{ uri: item.cover }} style={{ width: 48, height: 48, borderRadius: 4, backgroundColor: '#212121' }} />
+                <View style={{ flex: 1, marginLeft: 12 }}>
+                  <Text numberOfLines={1} style={{ color: isCurrent ? '#FF0000' : '#ffffff', fontSize: 14, fontWeight: '500' }}>{item.title}</Text>
+                  <Text numberOfLines={1} style={{ color: '#aaaaaa', fontSize: 13 }}>{item.artist} • {item.duration || fmtSec(item.durationSec)}</Text>
+                </View>
+                {loadingId === item.videoId
+                  ? <ActivityIndicator size="small" color="#fff" />
+                  : isItemPlaying
+                    ? <Pause color="#FF0000" size={20} fill="#FF0000" />
                     : <Play color="#ffffff" size={20} fill="#ffffff" />}
-                </TouchableOpacity>
-              );
-            }}
-          />
-        </>
+              </TouchableOpacity>
+            );
+          }}
+        />
       )}
     </View>
   );
