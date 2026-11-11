@@ -67,46 +67,44 @@ export async function runOtaCheck(): Promise<UpdateState> {
       return 'ready';
     }
 
-    emit('available');
+    emit('checking');
     const check = await Updates.checkForUpdateAsync();
     if (!check.isAvailable) {
       emit('idle');
       return 'idle';
     }
 
-    Alert.alert(
-      'Atualização disponível',
-      'Uma nova versão do app está pronta. Baixando agora...',
-      [
-        { text: 'Depois', style: 'cancel' },
-        {
-          text: 'Atualizar agora',
-          onPress: async () => {
-            emit('downloading');
-            const res = await Updates.fetchUpdateAsync();
-            if (res.isNew) {
-              emit('ready');
-              Alert.alert('Atualização pronta', 'O app será reiniciado agora.', [
-                { text: 'OK', onPress: reloadForUpdate },
-              ]);
-            } else {
-              emit('idle');
-            }
-          },
-        },
-      ]
-    );
+    // Encontrou atualização! Mantém o estado 'available' fixo
+    emit('available');
 
-    // Baixa em segundo plano mesmo sem confirmacao (melhora UX: usuario so clica OK depois)
+    // Baixa em segundo plano automaticamente
     try {
+      emit('downloading');
       const res = await Updates.fetchUpdateAsync();
       if (res.isNew) {
         emit('ready');
+        // Mostra alert depois de baixar
+        setTimeout(() => {
+          Alert.alert(
+            'Atualização pronta!',
+            'Uma nova versão foi baixada. Quer reiniciar agora?',
+            [
+              { text: 'Depois', style: 'cancel' },
+              { text: 'Reiniciar', onPress: reloadForUpdate },
+            ]
+          );
+        }, 500);
+      } else {
+        emit('idle');
       }
-    } catch {}
+    } catch (err) {
+      console.warn('[OTA] Erro ao baixar:', err);
+      emit('available'); // Mantém como disponível mesmo se falhar o download
+    }
 
     return 'available';
-  } catch {
+  } catch (err) {
+    console.warn('[OTA] Erro ao checar:', err);
     emit('error');
     return 'error';
   }
