@@ -93,7 +93,7 @@ async function proxyStream(req, res, id) {
     }
     const retryHeaders = {};
     if (retry.userAgent) retryHeaders["User-Agent"] = retry.userAgent;
-    if (req.headers.range) retryHeaders["Range"] = req.headers.range;
+    retryHeaders["Range"] = req.headers.range || "bytes=0-";
     try {
       upstream = await fetch(retry.url, {
         headers: retryHeaders,

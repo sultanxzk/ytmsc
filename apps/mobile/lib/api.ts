@@ -76,6 +76,8 @@ export async function resolveStream(videoId: string): Promise<string | null> {
       // Se for path relativo, adiciona base
       url = `${API_BASE}${url}`;
     }
+    // Evita reutilizar uma resposta 403 antiga armazenada pelo CDN.
+    if (url) url += `${url.includes('?') ? '&' : '?'}v=${Date.now()}`;
     if (url) {
       console.log('[API] Stream resolvido via:', json?.via, 'OK');
       return url;
@@ -83,7 +85,7 @@ export async function resolveStream(videoId: string): Promise<string | null> {
     throw new Error('API não retornou streamUrl');
   } catch (err) {
     // Fallback direto: o proxy pode resolver novamente streams expirados.
-    const proxyUrl = `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}&proxy=1`;
+    const proxyUrl = `${API_BASE}/api/music/stream?id=${encodeURIComponent(videoId)}&proxy=1&v=2`;
     console.warn('[API] Usando proxy direto:', String((err as Error)?.message || err));
     return proxyUrl;
   }
